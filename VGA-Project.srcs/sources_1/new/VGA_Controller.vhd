@@ -41,7 +41,9 @@ ENTITY VGA_Controller IS
         BLUE  : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
 
         HS    : OUT STD_LOGIC;
-        VS    : OUT STD_LOGIC
+        VS    : OUT STD_LOGIC;
+
+        sw    : IN  STD_LOGIC_VECTOR(4 DOWNTO 0)
     );
 END VGA_Controller;
 
@@ -49,8 +51,8 @@ ARCHITECTURE Behavioral OF VGA_Controller IS
     CONSTANT HORIZONTAL             : INTEGER                        := 800;
     CONSTANT VERTICAL               : INTEGER                        := 525;
 
-    CONSTANT HEIGHT                 : INTEGER                        := 240;
-    CONSTANT WIDTH                  : INTEGER                        := 320;
+    CONSTANT HEIGHT                 : INTEGER                        := 480;
+    CONSTANT WIDTH                  : INTEGER                        := 640;
 
     CONSTANT H_MIN_ADDRESSABLE      : INTEGER                        := 144;
     CONSTANT H_MAX_ADDRESSABLE      : INTEGER                        := 784;
@@ -77,16 +79,16 @@ ARCHITECTURE Behavioral OF VGA_Controller IS
     SIGNAL GREEN_temp               : STD_LOGIC_VECTOR (3 DOWNTO 0)  := (OTHERS => '0');
     SIGNAL BLUE_temp                : STD_LOGIC_VECTOR (3 DOWNTO 0)  := (OTHERS => '0');
 
-    SIGNAL Img_data                 : STD_LOGIC_VECTOR (11 DOWNTO 0) := (OTHERS => '0');
-    SIGNAL memAddr                  : STD_LOGIC_VECTOR (16 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL Img_data                 : STD_LOGIC_VECTOR (4 DOWNTO 0)  := (OTHERS => '0');
+    SIGNAL memAddr                  : STD_LOGIC_VECTOR (18 DOWNTO 0) := (OTHERS => '0');
 
     COMPONENT BRAM_img1
         PORT (
             clka  : IN  STD_LOGIC;
             wea   : IN  STD_LOGIC_VECTOR(0 DOWNTO 0);
-            addra : IN  STD_LOGIC_VECTOR(16 DOWNTO 0);
-            dina  : IN  STD_LOGIC_VECTOR(11 DOWNTO 0);
-            douta : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
+            addra : IN  STD_LOGIC_VECTOR(18 DOWNTO 0);
+            dina  : IN  STD_LOGIC_VECTOR(4 DOWNTO 0);
+            douta : OUT STD_LOGIC_VECTOR(4 DOWNTO 0)
         );
     END COMPONENT;
 
@@ -128,40 +130,76 @@ BEGIN
             Display_Area => Display_Area
         );
 
-    --     mem : entity work.Img_Memory(Behavioral)
-    --           generic map (
-    --                RAM_HEIGHT => HEIGHT,
-    --                RAM_WIDTH => WIDTH
-    --           )
-    --           port map (
-    --                H_counter => H_counter,
-    --                V_counter => V_counter,
-    --                data => Img_Data
-    --           );
-
-    -- cur_row * n_columns + cur_col
-    H_counter_addressable <= to_integer(unsigned(H_counter)) - 144;
-    V_counter_addressable <= to_integer(unsigned(V_counter)) - 35;
-    H_V_index             <= V_counter_addressable * 320 + H_counter_addressable;
+    H_counter_addressable <= to_integer(unsigned(H_counter)) - H_MIN_ADDRESSABLE;
+    V_counter_addressable <= to_integer(unsigned(V_counter)) - V_MIN_ADDRESSABLE;
+    H_V_index             <= V_counter_addressable * WIDTH + H_counter_addressable;
 
     memAddr               <= STD_LOGIC_VECTOR(to_unsigned(H_V_index, memAddr'length))
-               WHEN Display_Area = '1' AND (V_counter_addressable < 240) AND (H_counter_addressable < 320) AND (V_counter_addressable >= 0) AND (H_counter_addressable >= 0) ELSE
-               "11111111111111111";
+               WHEN Display_Area = '1' AND (V_counter_addressable < HEIGHT) AND (H_counter_addressable < WIDTH) AND (V_counter_addressable >= 0) AND (H_counter_addressable >= 0) ELSE
+               "1111111111111111111";
     img_mem : BRAM_img1
     PORT MAP(
         clka  => clk_25Mhz,
         wea   => "0",
         addra => memAddr,
-        dina  => x"000",
+        dina  => "00000",
         douta => Img_data
     );
 
-    color_mux : PROCESS (Display_Area) IS
+    color_mux : PROCESS (Display_Area, V_counter_addressable, H_counter_addressable, Img_Data, sw) IS
     BEGIN
-        IF Display_Area = '1' AND (V_counter_addressable < 240) AND (H_counter_addressable < 320) AND (V_counter_addressable >= 0) AND (H_counter_addressable >= 0) THEN
-            RED_temp   <= Img_data(11 DOWNTO 8);
-            GREEN_temp <= Img_data(7 DOWNTO 4);
-            BLUE_temp  <= Img_data(3 DOWNTO 0);
+        IF Display_Area = '1' AND (V_counter_addressable < HEIGHT) AND (H_counter_addressable < WIDTH) AND (V_counter_addressable >= 0) AND (H_counter_addressable >= 0) THEN
+            IF sw(0 DOWNTO 0) = "1" THEN
+                IF Img_Data(0 DOWNTO 0) = "1" THEN
+                    RED_temp   <= x"F";
+                    GREEN_temp <= x"F";
+                    BLUE_temp  <= x"F";
+                ELSE
+                    RED_temp   <= x"0";
+                    GREEN_temp <= x"0";
+                    BLUE_temp  <= x"0";
+                END IF;
+            ELSIF sw(1 DOWNTO 1) = "1" THEN
+                IF Img_Data(1 DOWNTO 1) = "1" THEN
+                    RED_temp   <= x"F";
+                    GREEN_temp <= x"F";
+                    BLUE_temp  <= x"F";
+                ELSE
+                    RED_temp   <= x"0";
+                    GREEN_temp <= x"0";
+                    BLUE_temp  <= x"0";
+                END IF;
+            ELSIF sw(2 DOWNTO 2) = "1" THEN
+                IF Img_Data(2 DOWNTO 2) = "1" THEN
+                    RED_temp   <= x"F";
+                    GREEN_temp <= x"F";
+                    BLUE_temp  <= x"F";
+                ELSE
+                    RED_temp   <= x"0";
+                    GREEN_temp <= x"0";
+                    BLUE_temp  <= x"0";
+                END IF;
+            ELSIF sw(3 DOWNTO 3) = "1" THEN
+                IF Img_Data(3 DOWNTO 3) = "1" THEN
+                    RED_temp   <= x"F";
+                    GREEN_temp <= x"F";
+                    BLUE_temp  <= x"F";
+                ELSE
+                    RED_temp   <= x"0";
+                    GREEN_temp <= x"0";
+                    BLUE_temp  <= x"0";
+                END IF;
+            ELSE
+                IF Img_Data(4 DOWNTO 4) = "1" THEN
+                    RED_temp   <= x"F";
+                    GREEN_temp <= x"F";
+                    BLUE_temp  <= x"F";
+                ELSE
+                    RED_temp   <= x"0";
+                    GREEN_temp <= x"0";
+                    BLUE_temp  <= x"0";
+                END IF;
+            END IF;
         ELSIF Display_Area = '1' THEN
             RED_temp   <= x"F";
             GREEN_temp <= x"F";

@@ -57,9 +57,9 @@
 BRAM_img1 your_instance_name (
   .clka(clka),    // input wire clka
   .wea(wea),      // input wire [0 : 0] wea
-  .addra(addra),  // input wire [16 : 0] addra
-  .dina(dina),    // input wire [11 : 0] dina
-  .douta(douta)  // output wire [11 : 0] douta
+  .addra(addra),  // input wire [18 : 0] addra
+  .dina(dina),    // input wire [4 : 0] dina
+  .douta(douta)  // output wire [4 : 0] douta
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

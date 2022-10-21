@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Fri Oct 21 23:43:05 2022
+# Process ID: 10040
+# Current directory: C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.runs/impl_1
+# Command line: vivado.exe -log VGA_Controller.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source VGA_Controller.tcl -notrace
+# Log file: C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.runs/impl_1/VGA_Controller.vdi
+# Journal file: C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.runs/impl_1\vivado.jou
+# Running On: DESKTOP-6LNBR6U, OS: Windows, CPU Frequency: 2304 MHz, CPU Physical cores: 8, Host memory: 16905 MB
+#-----------------------------------------------------------
+source VGA_Controller.tcl -notrace

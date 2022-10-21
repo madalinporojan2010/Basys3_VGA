@@ -54,9 +54,9 @@ COMPONENT BRAM_img1
   PORT (
     clka : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    addra : IN STD_LOGIC_VECTOR(16 DOWNTO 0);
-    dina : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(11 DOWNTO 0) 
+    addra : IN STD_LOGIC_VECTOR(18 DOWNTO 0);
+    dina : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(4 DOWNTO 0) 
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------
