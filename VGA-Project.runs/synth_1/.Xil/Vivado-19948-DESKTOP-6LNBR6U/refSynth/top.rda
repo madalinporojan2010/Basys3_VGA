@@ -1,0 +1,78 @@
+Data_For_RDAFlowver5.0
+	top levelùD
+
+Img_Memory
+LinkDesign_Blackboxes¡
+synthFileNamesJ
+10DE:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/BRAM_SINGLE_MACRO.vhdG
+11AE:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/BRAM_TDP_MACRO.vhdK
+12EE:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/COUNTER_LOAD_MACRO.vhdI
+13CE:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/COUNTER_TC_MACRO.vhdI
+14CE:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/EQ_COMPARE_MACRO.vhdM
+15GE:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/FIFO_DUALCLOCK_MACRO.vhdF
+20@E:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/ADDSUB_MACRO.vH
+16BE:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/FIFO_SYNC_MACRO.vhdH
+21BE:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/BRAM_SDP_MACRO.vC
+17=E:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/MACC_MACRO.vhdK
+22EE:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.vH
+23BE:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/BRAM_TDP_MACRO.vC
+18=E:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/MULT_MACRO.vhdL
+24FE:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/COUNTER_LOAD_MACRO.vG
+19AE:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/ADDMACC_MACRO.vD
+30>E:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/MULT_MACRO.vJ
+25DE:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/COUNTER_TC_MACRO.vJ
+31DE:/Xilinx/Vivado/2022.1/data/vhdl/src/unisims/retarget/MULT18X18.vhdJ
+26DE:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/EQ_COMPARE_MACRO.v
+NumFileNames44K
+32EE:/Xilinx/Vivado/2022.1/data/vhdl/src/unisims/retarget/MULT18X18S.vhdN
+27HE:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/FIFO_DUALCLOCK_MACRO.v=
+18E:/Xilinx/Vivado/2022.1/scripts/rt/data/unisim_VCOMP.vhd]
+33WC:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.srcs/sources_1/new/Img_Memory.vhdI
+28CE:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/FIFO_SYNC_MACRO.v<
+27E:/Xilinx/Vivado/2022.1/scripts/rt/data/unisim_VPKG.vhd^
+34XC:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.runs/synth_1/1993/src/std_1164.vhdD
+29>E:/Xilinx/Vivado/2022.1/data/verilog/src/unimacro/MACC_MACRO.v:
+35E:/Xilinx/Vivado/2022.1/scripts/rt/data/unisim_comp.v^
+40XC:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.runs/synth_1/1993/src/prmtvs_p.vhd^
+35XC:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.runs/synth_1/1993/src/standard.vhd=
+48E:/Xilinx/Vivado/2022.1/scripts/rt/data/internal_cells.v^
+41XC:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.runs/synth_1/1993/src/prmtvs_b.vhda
+36[C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.runs/synth_1/1993/src/numeric_std.vhd3
+5.E:/Xilinx/Vivado/2022.1/scripts/rt/data/BUFT.v^
+42XC:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.runs/synth_1/1993/src/syn_arit.vhd\
+37VC:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.runs/synth_1/1993/src/textio.vhdF
+6AE:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/unimacro_VCOMP.vhd^
+43XC:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.runs/synth_1/1993/src/syn_unsi.vhd^
+38XC:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.runs/synth_1/1993/src/timing_p.vhdE
+7@E:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/ADDMACC_MACRO.vhd^
+39XC:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.runs/synth_1/1993/src/timing_b.vhdD
+8?E:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/ADDSUB_MACRO.vhdF
+9AE:/Xilinx/Vivado/2022.1/data/vhdl/src/unimacro/BRAM_SDP_MACRO.vhd
+
+synthStatsÖ%
+ElaboratedNamesForRQSÎ$
+DSP_RAMﬂ$
+1200128”$ {img[0,0]_i} {img[0,100]_i} {img[0,101]_i} {img[0,102]_i} {img[0,103]_i} {img[0,104]_i} {img[0,105]_i} {img[0,106]_i} {img[0,107]_i} {img[0,108]_i} {img[0,109]_i} {img[0,10]_i} {img[0,110]_i} {img[0,111]_i} {img[0,112]_i} {img[0,113]_i} {img[0,114]_i} {img[0,115]_i} {img[0,116]_i} {img[0,117]_i} {img[0,118]_i} {img[0,119]_i} {img[0,11]_i} {img[0,120]_i} {img[0,121]_i} {img[0,122]_i} {img[0,123]_i} {img[0,124]_i} {img[0,125]_i} {img[0,126]_i} {img[0,127]_i} {img[0,128]_i} {img[0,129]_i} {img[0,12]_i} {img[0,130]_i} {img[0,131]_i} {img[0,132]_i} {img[0,133]_i} {img[0,134]_i} {img[0,135]_i} {img[0,136]_i} {img[0,137]_i} {img[0,138]_i} {img[0,139]_i} {img[0,13]_i} {img[0,140]_i} {img[0,141]_i} {img[0,142]_i} {img[0,143]_i} {img[0,144]_i} {img[0,145]_i} {img[0,146]_i} {img[0,147]_i} {img[0,148]_i} {img[0,149]_i} {img[0,14]_i} {img[0,150]_i} {img[0,151]_i} {img[0,152]_i} {img[0,153]_i} {img[0,154]_i} {img[0,155]_i} {img[0,156]_i} {img[0,157]_i} {img[0,158]_i} {img[0,159]_i} {img[0,15]_i} {img[0,160]_i} {img[0,161]_i} {img[0,162]_i} {img[0,163]_i} {img[0,164]_i} {img[0,165]_i} {img[0,166]_i} {img[0,167]_i} {img[0,168]_i} {img[0,169]_i} {img[0,16]_i} {img[0,170]_i} {img[0,171]_i} {img[0,172]_i} {img[0,173]_i} {img[0,174]_i} {img[0,175]_i} {img[0,176]_i} {img[0,177]_i} {img[0,178]_i} {img[0,179]_i} {img[0,17]_i} {img[0,180]_i} {img[0,181]_i} {img[0,182]_i} {img[0,183]_i} {img[0,184]_i} {img[0,185]_i} {img[0,186]_i} {img[0,187]_i} {img[0,188]_i} {img[0,189]_i} {img[0,18]_i} {img[0,190]_i} {img[0,191]_i} {img[0,192]_i} {img[0,193]_i} {img[0,194]_i} {img[0,195]_i} {img[0,196]_i} {img[0,197]_i} {img[0,198]_i} {img[0,199]_i} {img[0,19]_i} {img[0,1]_i} {img[0,200]_i} {img[0,201]_i} {img[0,202]_i} {img[0,203]_i} {img[0,204]_i} {img[0,205]_i} {img[0,206]_i} {img[0,207]_i} {img[0,208]_i} {img[0,209]_i} {img[0,20]_i} {img[0,210]_i} {img[0,211]_i} {img[0,212]_i} {img[0,213]_i} {img[0,214]_i} {img[0,215]_i} {img[0,216]_i} {img[0,217]_i} {img[0,218]_i} {img[0,219]_i} {img[0,21]_i} {img[0,220]_i} {img[0,221]_i} {img[0,222]_i} {img[0,223]_i} {img[0,224]_i} {img[0,225]_i} {img[0,226]_i} {img[0,227]_i} {img[0,228]_i} {img[0,229]_i} {img[0,22]_i} {img[0,230]_i} {img[0,231]_i} {img[0,232]_i} {img[0,233]_i} {img[0,234]_i} {img[0,235]_i} {img[0,236]_i} {img[0,237]_i} {img[0,238]_i} {img[0,239]_i} {img[0,23]_i} {img[0,240]_i} {img[0,241]_i} {img[0,242]_i} {img[0,243]_i} {img[0,244]_i} {img[0,245]_i} {img[0,246]_i} {img[0,247]_i} {img[0,248]_i} {img[0,249]_i} {img[0,24]_i} {img[0,250]_i} {img[0,251]_i} {img[0,252]_i} {img[0,253]_i} {img[0,254]_i} {img[0,255]_i} {img[0,256]_i} {img[0,257]_i} {img[0,258]_i} {img[0,259]_i} {img[0,25]_i} {img[0,260]_i} {img[0,261]_i} {img[0,262]_i} {img[0,263]_i} {img[0,264]_i} {img[0,265]_i} {img[0,266]_i} {img[0,267]_i} {img[0,268]_i} {img[0,269]_i} {img[0,26]_i} {img[0,270]_i} {img[0,271]_i} {img[0,272]_i} {img[0,273]_i} {img[0,274]_i} {img[0,275]_i} {img[0,276]_i} {img[0,277]_i} {img[0,278]_i} {img[0,279]_i} {img[0,27]_i} {img[0,280]_i} {img[0,281]_i} {img[0,282]_i} {img[0,283]_i} {img[0,284]_i} {img[0,285]_i} {img[0,286]_i} {img[0,287]_i} {img[0,288]_i} {img[0,289]_i} {img[0,28]_i} {img[0,290]_i} {img[0,291]_i} {img[0,292]_i} {img[0,293]_i} {img[0,294]_i} {img[0,295]_i} {img[0,296]_i} {img[0,297]_i} {img[0,298]_i} {img[0,299]_i} {img[0,29]_i} {img[0,2]_i} {img[0,300]_i} {img[0,301]_i} {img[0,302]_i} {img[0,303]_i} {img[0,304]_i} {img[0,305]_i} {img[0,306]_i} {img[0,307]_i} {img[0,308]_i} {img[0,309]_i} {img[0,30]_i} {img[0,310]_i} {img[0,311]_i} {img[0,312]_i} {img[0,313]_i} {img[0,314]_i} {img[0,315]_i} {img[0,316]_i} {img[0,317]_i} {img[0,318]_i} {img[0,319]_i} {img[0,31]_i} {img[0,32]_i} {img[0,33]_i} {img[0,34]_i} {img[0,35]_i} {img[0,36]_i} {img[0,37]_i} {img[0,38]_i} {img[0,39]_i} {img[0,3]_i} {img[0,40]_i} {img[0,41]_i} {img[0,42]_i} {img[0,43]_i} {img[0,44]_i} {img[0,45]_i} {img[0,46]_i} {img[0,47]_i} {img[0,48]_i} {img[0,49]_i} {img[0,4]_i} {img[0,50]_i} {img[0,51]_i} {img[0,52]_i} {img[0,53]_i} {img[0,54]_i} {img[0,55]_i} {img[0,56]_i} {img[0,57]_i} {img[0,58]_i} {img[0,59]_i} {img[0,5]_i} {img[0,60]_i} {img[0,61]_i} {img[0,62]_i} {img[0,63]_i} {img[0,64]_i} {img[0,65]_i} {img[0,66]_i} {img[0,67]_i} {img[0,68]_i} {img[0,69]_i} {img[0,6]_i} {img[0,70]_i} {img[0,71]_i} {img[0,72]_i} {img[0,73]_i} {img[0,74]_i} {img[0,75]_i} {img[0,76]_i} {img[0,77]_i} {img[0,78]_i} {img[0,79]_i} {img[0,7]_i} {img[0,80]_i} {img[0,81]_i} {img[0,82]_i} {img[0,83]_i} {img[0,84]_i} {img[0,85]_i} {img[0,86]_i} {img[0,87]_i} {img[0,88]_i} {img[0,89]_i} {img[0,8]_i} {img[0,90]_i} {img[0,91]_i} {img[0,92]_i} {img[0,93]_i} {img[0,94]_i} {img[0,95]_i} {img[0,96]_i} {img[0,97]_i} {img[0,98]_i} {img[0,99]_i} {img[0,9]_i} 
+blackBoxInfoã
+synth_design
+isIncremental0
+Runtime7
+Threads used2Y
+argsQ-verilog_define default::[not_specified] -top  Img_Memory -part  xc7a35tcpg236-1 
+resynthPerc0.00
+Cputime7
+blackBoxPerc	-nan(ind)
+	directive ù
+synth_design_metrics$
+mismatchedAddSubOperatorWidths-1
+lowMaxFanout-1
+NumUnregisteredPorts0
+caseNotFullNoDefault-1
+	smallSrls-1
+srlsWithResetLogic-1
+shallowRAMWithAttribute-1
+hierMFO0
+bigRAMs-1
+NetsWithMixedFanouts-1
+DSPsWithKeep0
+RQS_Results

@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../VGA-Project.srcs/sources_1/new/Comparators.vhd" \
+"../../../../VGA-Project.srcs/sources_1/new/Counters.vhd" \
+"../../../../VGA-Project.srcs/sources_1/new/Frequency_Divider.vhd" \
+"../../../../VGA-Project.srcs/sources_1/new/Img_Memory.vhd" \
+"../../../../VGA-Project.srcs/sources_1/new/VGA_Controller.vhd" \
+
+# Do not sort compile order
+nosort

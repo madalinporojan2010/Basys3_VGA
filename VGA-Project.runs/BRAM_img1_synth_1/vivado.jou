@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Sun Oct 16 11:58:04 2022
+# Process ID: 25452
+# Current directory: C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.runs/BRAM_img1_synth_1
+# Command line: vivado.exe -log BRAM_img1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source BRAM_img1.tcl
+# Log file: C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.runs/BRAM_img1_synth_1/BRAM_img1.vds
+# Journal file: C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.runs/BRAM_img1_synth_1\vivado.jou
+# Running On: DESKTOP-6LNBR6U, OS: Windows, CPU Frequency: 2304 MHz, CPU Physical cores: 8, Host memory: 16905 MB
+#-----------------------------------------------------------
+source BRAM_img1.tcl -notrace

@@ -1,0 +1,2 @@
+BRAM_img1.v,verilog,xil_defaultlib,../../../../VGA-Project.gen/sources_1/ip/BRAM_img1/sim/BRAM_img1.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v
