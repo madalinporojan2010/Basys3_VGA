@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date         : Sun Oct 16 12:17:51 2022
+| Date         : Fri Oct 21 18:05:40 2022
 | Host         : DESKTOP-6LNBR6U running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file VGA_Controller_control_sets_placed.rpt
 | Design       : VGA_Controller
@@ -62,7 +62,7 @@ Table of Contents
 | No           | No                    | Yes                    |              33 |           13 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |              32 |           12 |
+| Yes          | No                    | Yes                    |              32 |           13 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -76,7 +76,7 @@ Table of Contents
 | ~freq_div/Q1    |               |                  |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG  |               |                  |                1 |              1 |         1.00 |
 |  clk_25Mhz_BUFG |               |                  |                6 |             11 |         1.83 |
-|  clk_25Mhz_BUFG | cnts/TC       | rst_IBUF         |               12 |             32 |         2.67 |
+|  clk_25Mhz_BUFG | cnts/TC       | rst_IBUF         |               13 |             32 |         2.46 |
 |  clk_25Mhz_BUFG |               | rst_IBUF         |               13 |             33 |         2.54 |
 +-----------------+---------------+------------------+------------------+----------------+--------------+
 

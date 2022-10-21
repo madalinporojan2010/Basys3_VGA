@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.runs/synth_1'
+HD_PWD='C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -1,0 +1,12 @@
+{
+    "vhdl.formatter.align.procedure": true,
+    "vhdl.formatter.align.port": true,
+    "vhdl.formatter.align.mode": "Global",
+    "vhdl.formatter.align.generic": true,
+    "vhdl.formatter.align.function": true,
+    "vhdl.formatter.align.comments": false,
+    "vhdl.formatter.align.all": true,
+    "vhdl.suggestPackageCase": "upper",
+    "vhdl.formatter.indentation": "    ",
+    "vhdl.formatter.insertFinalNewline": false
+}

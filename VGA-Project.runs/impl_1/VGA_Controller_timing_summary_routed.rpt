@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date         : Sun Oct 16 12:18:10 2022
+| Date         : Fri Oct 21 18:05:58 2022
 | Host         : DESKTOP-6LNBR6U running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -report_unconstrained -file VGA_Controller_timing_summary_routed.rpt -pb VGA_Controller_timing_summary_routed.pb -rpx VGA_Controller_timing_summary_routed.rpx -warn_on_violation
 | Design       : VGA_Controller
@@ -372,285 +372,269 @@ Min Delay           591 Endpoints
 Max Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
-  Source:                 cnts/Q2_value_reg[0]/C
+  Source:                 cnts/Q2_value_reg[4]/C
                             (rising edge-triggered cell FDCE)
-  Destination:            your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[9]
+  Destination:            img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[15].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[7]
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        15.190ns  (logic 4.793ns (31.555%)  route 10.397ns (68.445%))
-  Logic Levels:           6  (DSP48E1=1 FDCE=1 LUT3=1 LUT4=1 LUT5=1 LUT6=1)
+  Data Path Delay:        13.646ns  (logic 4.899ns (35.900%)  route 8.747ns (64.100%))
+  Logic Levels:           5  (DSP48E1=1 FDCE=1 LUT5=1 LUT6=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X48Y20         FDCE                         0.000     0.000 r  cnts/Q2_value_reg[0]/C
-    SLICE_X48Y20         FDCE (Prop_fdce_C_Q)         0.456     0.456 f  cnts/Q2_value_reg[0]/Q
-                         net (fo=11, routed)          0.986     1.442    cnts/Q2_value_reg_n_0_[0]
-    SLICE_X50Y21         LUT4 (Prop_lut4_I2_O)        0.124     1.566 r  cnts/memAddr0_i_18/O
-                         net (fo=4, routed)           0.309     1.875    cnts/memAddr0_i_18_n_0
-    SLICE_X50Y21         LUT5 (Prop_lut5_I3_O)        0.124     1.999 f  cnts/RED_OBUF[3]_inst_i_5/O
-                         net (fo=31, routed)          1.183     3.182    cnts/RED_OBUF[3]_inst_i_5_n_0
-    SLICE_X55Y22         LUT3 (Prop_lut3_I0_O)        0.124     3.306 r  cnts/memAddr0_i_8/O
-                         net (fo=20, routed)          1.009     4.315    A[10]
-    DSP48_X1Y8           DSP48E1 (Prop_dsp48e1_A[11]_P[6])
-                                                      3.841     8.156 r  memAddr0/P[6]
-                         net (fo=1, routed)           0.501     8.656    cnts/P[6]
-    SLICE_X56Y21         LUT6 (Prop_lut6_I0_O)        0.124     8.780 r  cnts/your_instance_name_i_11/O
-                         net (fo=27, routed)          6.409    15.190    your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/prim_init.ram/addra[6]
-    RAMB36_X0Y0          RAMB36E1                                     r  your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[9]
+    SLICE_X53Y25         FDCE                         0.000     0.000 r  cnts/Q2_value_reg[4]/C
+    SLICE_X53Y25         FDCE (Prop_fdce_C_Q)         0.456     0.456 f  cnts/Q2_value_reg[4]/Q
+                         net (fo=8, routed)           1.016     1.472    cnts/Q2_value_reg_n_0_[4]
+    SLICE_X54Y27         LUT6 (Prop_lut6_I3_O)        0.124     1.596 f  cnts/img_mem_i_18/O
+                         net (fo=22, routed)          0.487     2.083    cnts/img_mem_i_18_n_0
+    SLICE_X54Y27         LUT5 (Prop_lut5_I0_O)        0.150     2.233 r  cnts/H_V_index_i_1/O
+                         net (fo=20, routed)          1.100     3.332    V_counter_addressable[10]
+    DSP48_X1Y10          DSP48E1 (Prop_dsp48e1_A[19]_P[4])
+                                                      4.045     7.377 r  H_V_index/P[4]
+                         net (fo=1, routed)           0.985     8.363    cnts/P[4]
+    SLICE_X55Y26         LUT6 (Prop_lut6_I0_O)        0.124     8.487 r  cnts/img_mem_i_13/O
+                         net (fo=27, routed)          5.160    13.646    img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[15].ram.r/prim_init.ram/addra[4]
+    RAMB36_X1Y10         RAMB36E1                                     r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[15].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[7]
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 cnts/Q2_value_reg[0]/C
+  Source:                 cnts/Q2_value_reg[4]/C
                             (rising edge-triggered cell FDCE)
-  Destination:            your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[9]
+  Destination:            img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ENARDEN
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        14.852ns  (logic 4.793ns (32.273%)  route 10.059ns (67.727%))
-  Logic Levels:           6  (DSP48E1=1 FDCE=1 LUT3=1 LUT4=1 LUT5=1 LUT6=1)
+  Data Path Delay:        13.494ns  (logic 5.047ns (37.402%)  route 8.447ns (62.598%))
+  Logic Levels:           6  (DSP48E1=1 FDCE=1 LUT5=2 LUT6=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X48Y20         FDCE                         0.000     0.000 r  cnts/Q2_value_reg[0]/C
-    SLICE_X48Y20         FDCE (Prop_fdce_C_Q)         0.456     0.456 f  cnts/Q2_value_reg[0]/Q
-                         net (fo=11, routed)          0.986     1.442    cnts/Q2_value_reg_n_0_[0]
-    SLICE_X50Y21         LUT4 (Prop_lut4_I2_O)        0.124     1.566 r  cnts/memAddr0_i_18/O
-                         net (fo=4, routed)           0.309     1.875    cnts/memAddr0_i_18_n_0
-    SLICE_X50Y21         LUT5 (Prop_lut5_I3_O)        0.124     1.999 f  cnts/RED_OBUF[3]_inst_i_5/O
-                         net (fo=31, routed)          1.183     3.182    cnts/RED_OBUF[3]_inst_i_5_n_0
-    SLICE_X55Y22         LUT3 (Prop_lut3_I0_O)        0.124     3.306 r  cnts/memAddr0_i_8/O
-                         net (fo=20, routed)          1.009     4.315    A[10]
-    DSP48_X1Y8           DSP48E1 (Prop_dsp48e1_A[11]_P[6])
-                                                      3.841     8.156 r  memAddr0/P[6]
-                         net (fo=1, routed)           0.501     8.656    cnts/P[6]
-    SLICE_X56Y21         LUT6 (Prop_lut6_I0_O)        0.124     8.780 r  cnts/your_instance_name_i_11/O
-                         net (fo=27, routed)          6.071    14.852    your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/prim_init.ram/addra[6]
-    RAMB36_X0Y1          RAMB36E1                                     r  your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[9]
+    SLICE_X53Y25         FDCE                         0.000     0.000 r  cnts/Q2_value_reg[4]/C
+    SLICE_X53Y25         FDCE (Prop_fdce_C_Q)         0.456     0.456 f  cnts/Q2_value_reg[4]/Q
+                         net (fo=8, routed)           1.016     1.472    cnts/Q2_value_reg_n_0_[4]
+    SLICE_X54Y27         LUT6 (Prop_lut6_I3_O)        0.124     1.596 f  cnts/img_mem_i_18/O
+                         net (fo=22, routed)          0.487     2.083    cnts/img_mem_i_18_n_0
+    SLICE_X54Y27         LUT5 (Prop_lut5_I0_O)        0.150     2.233 r  cnts/H_V_index_i_1/O
+                         net (fo=20, routed)          1.100     3.332    V_counter_addressable[10]
+    DSP48_X1Y10          DSP48E1 (Prop_dsp48e1_A[19]_P[16])
+                                                      4.045     7.377 f  H_V_index/P[16]
+                         net (fo=1, routed)           1.023     8.400    cnts/P[16]
+    SLICE_X54Y28         LUT6 (Prop_lut6_I0_O)        0.124     8.524 f  cnts/img_mem_i_1/O
+                         net (fo=28, routed)          4.072    12.596    img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/prim_init.ram/addra[16]
+    SLICE_X10Y6          LUT5 (Prop_lut5_I1_O)        0.148    12.744 r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram_i_1/O
+                         net (fo=1, routed)           0.750    13.494    img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/prim_init.ram/ena_array[7]
+    RAMB36_X0Y0          RAMB36E1                                     r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[12].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ENARDEN
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 cnts/Q2_value_reg[0]/C
+  Source:                 cnts/Q2_value_reg[4]/C
                             (rising edge-triggered cell FDCE)
-  Destination:            your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[10]
+  Destination:            img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[15].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[3]
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        14.551ns  (logic 4.793ns (32.939%)  route 9.758ns (67.061%))
-  Logic Levels:           6  (DSP48E1=1 FDCE=1 LUT3=1 LUT4=1 LUT5=1 LUT6=1)
+  Data Path Delay:        13.401ns  (logic 4.899ns (36.556%)  route 8.502ns (63.444%))
+  Logic Levels:           5  (DSP48E1=1 FDCE=1 LUT5=1 LUT6=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X48Y20         FDCE                         0.000     0.000 r  cnts/Q2_value_reg[0]/C
-    SLICE_X48Y20         FDCE (Prop_fdce_C_Q)         0.456     0.456 f  cnts/Q2_value_reg[0]/Q
-                         net (fo=11, routed)          0.986     1.442    cnts/Q2_value_reg_n_0_[0]
-    SLICE_X50Y21         LUT4 (Prop_lut4_I2_O)        0.124     1.566 r  cnts/memAddr0_i_18/O
-                         net (fo=4, routed)           0.309     1.875    cnts/memAddr0_i_18_n_0
-    SLICE_X50Y21         LUT5 (Prop_lut5_I3_O)        0.124     1.999 f  cnts/RED_OBUF[3]_inst_i_5/O
-                         net (fo=31, routed)          1.183     3.182    cnts/RED_OBUF[3]_inst_i_5_n_0
-    SLICE_X55Y22         LUT3 (Prop_lut3_I0_O)        0.124     3.306 r  cnts/memAddr0_i_8/O
-                         net (fo=20, routed)          1.009     4.315    A[10]
-    DSP48_X1Y8           DSP48E1 (Prop_dsp48e1_A[11]_P[7])
-                                                      3.841     8.156 r  memAddr0/P[7]
-                         net (fo=1, routed)           0.619     8.774    cnts/P[7]
-    SLICE_X56Y21         LUT6 (Prop_lut6_I0_O)        0.124     8.898 r  cnts/your_instance_name_i_10/O
-                         net (fo=27, routed)          5.653    14.551    your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/prim_init.ram/addra[7]
-    RAMB36_X0Y7          RAMB36E1                                     r  your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[10]
+    SLICE_X53Y25         FDCE                         0.000     0.000 r  cnts/Q2_value_reg[4]/C
+    SLICE_X53Y25         FDCE (Prop_fdce_C_Q)         0.456     0.456 f  cnts/Q2_value_reg[4]/Q
+                         net (fo=8, routed)           1.016     1.472    cnts/Q2_value_reg_n_0_[4]
+    SLICE_X54Y27         LUT6 (Prop_lut6_I3_O)        0.124     1.596 f  cnts/img_mem_i_18/O
+                         net (fo=22, routed)          0.487     2.083    cnts/img_mem_i_18_n_0
+    SLICE_X54Y27         LUT5 (Prop_lut5_I0_O)        0.150     2.233 r  cnts/H_V_index_i_1/O
+                         net (fo=20, routed)          1.100     3.332    V_counter_addressable[10]
+    DSP48_X1Y10          DSP48E1 (Prop_dsp48e1_A[19]_P[0])
+                                                      4.045     7.377 r  H_V_index/P[0]
+                         net (fo=1, routed)           0.793     8.171    cnts/P[0]
+    SLICE_X54Y25         LUT6 (Prop_lut6_I0_O)        0.124     8.295 r  cnts/img_mem_i_17/O
+                         net (fo=27, routed)          5.107    13.401    img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[15].ram.r/prim_init.ram/addra[0]
+    RAMB36_X1Y10         RAMB36E1                                     r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[15].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[3]
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 cnts/Q2_value_reg[0]/C
+  Source:                 cnts/Q2_value_reg[4]/C
                             (rising edge-triggered cell FDCE)
-  Destination:            your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[9]
+  Destination:            img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[7]
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        14.514ns  (logic 4.793ns (33.024%)  route 9.721ns (66.976%))
-  Logic Levels:           6  (DSP48E1=1 FDCE=1 LUT3=1 LUT4=1 LUT5=1 LUT6=1)
+  Data Path Delay:        13.308ns  (logic 4.899ns (36.812%)  route 8.409ns (63.188%))
+  Logic Levels:           5  (DSP48E1=1 FDCE=1 LUT5=1 LUT6=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X48Y20         FDCE                         0.000     0.000 r  cnts/Q2_value_reg[0]/C
-    SLICE_X48Y20         FDCE (Prop_fdce_C_Q)         0.456     0.456 f  cnts/Q2_value_reg[0]/Q
-                         net (fo=11, routed)          0.986     1.442    cnts/Q2_value_reg_n_0_[0]
-    SLICE_X50Y21         LUT4 (Prop_lut4_I2_O)        0.124     1.566 r  cnts/memAddr0_i_18/O
-                         net (fo=4, routed)           0.309     1.875    cnts/memAddr0_i_18_n_0
-    SLICE_X50Y21         LUT5 (Prop_lut5_I3_O)        0.124     1.999 f  cnts/RED_OBUF[3]_inst_i_5/O
-                         net (fo=31, routed)          1.183     3.182    cnts/RED_OBUF[3]_inst_i_5_n_0
-    SLICE_X55Y22         LUT3 (Prop_lut3_I0_O)        0.124     3.306 r  cnts/memAddr0_i_8/O
-                         net (fo=20, routed)          1.009     4.315    A[10]
-    DSP48_X1Y8           DSP48E1 (Prop_dsp48e1_A[11]_P[6])
-                                                      3.841     8.156 r  memAddr0/P[6]
-                         net (fo=1, routed)           0.501     8.656    cnts/P[6]
-    SLICE_X56Y21         LUT6 (Prop_lut6_I0_O)        0.124     8.780 r  cnts/your_instance_name_i_11/O
-                         net (fo=27, routed)          5.733    14.514    your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/prim_init.ram/addra[6]
-    RAMB36_X0Y2          RAMB36E1                                     r  your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[6].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[9]
+    SLICE_X53Y25         FDCE                         0.000     0.000 r  cnts/Q2_value_reg[4]/C
+    SLICE_X53Y25         FDCE (Prop_fdce_C_Q)         0.456     0.456 f  cnts/Q2_value_reg[4]/Q
+                         net (fo=8, routed)           1.016     1.472    cnts/Q2_value_reg_n_0_[4]
+    SLICE_X54Y27         LUT6 (Prop_lut6_I3_O)        0.124     1.596 f  cnts/img_mem_i_18/O
+                         net (fo=22, routed)          0.487     2.083    cnts/img_mem_i_18_n_0
+    SLICE_X54Y27         LUT5 (Prop_lut5_I0_O)        0.150     2.233 r  cnts/H_V_index_i_1/O
+                         net (fo=20, routed)          1.100     3.332    V_counter_addressable[10]
+    DSP48_X1Y10          DSP48E1 (Prop_dsp48e1_A[19]_P[4])
+                                                      4.045     7.377 r  H_V_index/P[4]
+                         net (fo=1, routed)           0.985     8.363    cnts/P[4]
+    SLICE_X55Y26         LUT6 (Prop_lut6_I0_O)        0.124     8.487 r  cnts/img_mem_i_13/O
+                         net (fo=27, routed)          4.822    13.308    img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/prim_init.ram/addra[4]
+    RAMB36_X1Y9          RAMB36E1                                     r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[7]
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 cnts/Q2_value_reg[0]/C
+  Source:                 cnts/Q2_value_reg[4]/C
                             (rising edge-triggered cell FDCE)
-  Destination:            your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[3]
+  Destination:            img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[22].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[7]
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        14.421ns  (logic 4.793ns (33.237%)  route 9.628ns (66.763%))
-  Logic Levels:           6  (DSP48E1=1 FDCE=1 LUT3=1 LUT4=1 LUT5=1 LUT6=1)
+  Data Path Delay:        13.308ns  (logic 4.899ns (36.813%)  route 8.409ns (63.187%))
+  Logic Levels:           5  (DSP48E1=1 FDCE=1 LUT5=1 LUT6=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X48Y20         FDCE                         0.000     0.000 r  cnts/Q2_value_reg[0]/C
-    SLICE_X48Y20         FDCE (Prop_fdce_C_Q)         0.456     0.456 f  cnts/Q2_value_reg[0]/Q
-                         net (fo=11, routed)          0.986     1.442    cnts/Q2_value_reg_n_0_[0]
-    SLICE_X50Y21         LUT4 (Prop_lut4_I2_O)        0.124     1.566 r  cnts/memAddr0_i_18/O
-                         net (fo=4, routed)           0.309     1.875    cnts/memAddr0_i_18_n_0
-    SLICE_X50Y21         LUT5 (Prop_lut5_I3_O)        0.124     1.999 f  cnts/RED_OBUF[3]_inst_i_5/O
-                         net (fo=31, routed)          1.183     3.182    cnts/RED_OBUF[3]_inst_i_5_n_0
-    SLICE_X55Y22         LUT3 (Prop_lut3_I0_O)        0.124     3.306 r  cnts/memAddr0_i_8/O
-                         net (fo=20, routed)          1.009     4.315    A[10]
-    DSP48_X1Y8           DSP48E1 (Prop_dsp48e1_A[11]_P[0])
-                                                      3.841     8.156 r  memAddr0/P[0]
-                         net (fo=1, routed)           0.629     8.784    cnts/P[0]
-    SLICE_X54Y19         LUT6 (Prop_lut6_I0_O)        0.124     8.908 r  cnts/your_instance_name_i_17/O
-                         net (fo=27, routed)          5.512    14.421    your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/prim_init.ram/addra[0]
-    RAMB36_X0Y7          RAMB36E1                                     r  your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[3]
+    SLICE_X53Y25         FDCE                         0.000     0.000 r  cnts/Q2_value_reg[4]/C
+    SLICE_X53Y25         FDCE (Prop_fdce_C_Q)         0.456     0.456 f  cnts/Q2_value_reg[4]/Q
+                         net (fo=8, routed)           1.016     1.472    cnts/Q2_value_reg_n_0_[4]
+    SLICE_X54Y27         LUT6 (Prop_lut6_I3_O)        0.124     1.596 f  cnts/img_mem_i_18/O
+                         net (fo=22, routed)          0.487     2.083    cnts/img_mem_i_18_n_0
+    SLICE_X54Y27         LUT5 (Prop_lut5_I0_O)        0.150     2.233 r  cnts/H_V_index_i_1/O
+                         net (fo=20, routed)          1.100     3.332    V_counter_addressable[10]
+    DSP48_X1Y10          DSP48E1 (Prop_dsp48e1_A[19]_P[4])
+                                                      4.045     7.377 r  H_V_index/P[4]
+                         net (fo=1, routed)           0.985     8.363    cnts/P[4]
+    SLICE_X55Y26         LUT6 (Prop_lut6_I0_O)        0.124     8.487 r  cnts/img_mem_i_13/O
+                         net (fo=27, routed)          4.821    13.308    img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[22].ram.r/prim_init.ram/addra[4]
+    RAMB36_X0Y5          RAMB36E1                                     r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[22].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[7]
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 cnts/Q2_value_reg[0]/C
+  Source:                 cnts/Q2_value_reg[4]/C
                             (rising edge-triggered cell FDCE)
-  Destination:            your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ENARDEN
+  Destination:            img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ENARDEN
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        14.412ns  (logic 4.949ns (34.339%)  route 9.463ns (65.661%))
-  Logic Levels:           7  (DSP48E1=1 FDCE=1 LUT3=1 LUT4=1 LUT5=2 LUT6=1)
+  Data Path Delay:        13.226ns  (logic 5.023ns (37.978%)  route 8.203ns (62.022%))
+  Logic Levels:           6  (DSP48E1=1 FDCE=1 LUT5=2 LUT6=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X48Y20         FDCE                         0.000     0.000 r  cnts/Q2_value_reg[0]/C
-    SLICE_X48Y20         FDCE (Prop_fdce_C_Q)         0.456     0.456 f  cnts/Q2_value_reg[0]/Q
-                         net (fo=11, routed)          0.986     1.442    cnts/Q2_value_reg_n_0_[0]
-    SLICE_X50Y21         LUT4 (Prop_lut4_I2_O)        0.124     1.566 r  cnts/memAddr0_i_18/O
-                         net (fo=4, routed)           0.309     1.875    cnts/memAddr0_i_18_n_0
-    SLICE_X50Y21         LUT5 (Prop_lut5_I3_O)        0.124     1.999 f  cnts/RED_OBUF[3]_inst_i_5/O
-                         net (fo=31, routed)          1.183     3.182    cnts/RED_OBUF[3]_inst_i_5_n_0
-    SLICE_X55Y22         LUT3 (Prop_lut3_I0_O)        0.124     3.306 r  cnts/memAddr0_i_8/O
-                         net (fo=20, routed)          1.009     4.315    A[10]
-    DSP48_X1Y8           DSP48E1 (Prop_dsp48e1_A[11]_P[15])
-                                                      3.841     8.156 f  memAddr0/P[15]
-                         net (fo=1, routed)           0.786     8.942    cnts/P[15]
-    SLICE_X53Y23         LUT6 (Prop_lut6_I0_O)        0.124     9.066 f  cnts/your_instance_name_i_2/O
-                         net (fo=30, routed)          4.096    13.162    your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/bindec_a.bindec_inst_a/addra[3]
-    SLICE_X8Y12          LUT5 (Prop_lut5_I0_O)        0.156    13.318 r  your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/bindec_a.bindec_inst_a/ENOUT/O
-                         net (fo=1, routed)           1.094    14.412    your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/prim_init.ram/ena_array[0]
-    RAMB36_X0Y0          RAMB36E1                                     r  your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[5].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ENARDEN
+    SLICE_X53Y25         FDCE                         0.000     0.000 r  cnts/Q2_value_reg[4]/C
+    SLICE_X53Y25         FDCE (Prop_fdce_C_Q)         0.456     0.456 f  cnts/Q2_value_reg[4]/Q
+                         net (fo=8, routed)           1.016     1.472    cnts/Q2_value_reg_n_0_[4]
+    SLICE_X54Y27         LUT6 (Prop_lut6_I3_O)        0.124     1.596 f  cnts/img_mem_i_18/O
+                         net (fo=22, routed)          0.487     2.083    cnts/img_mem_i_18_n_0
+    SLICE_X54Y27         LUT5 (Prop_lut5_I0_O)        0.150     2.233 r  cnts/H_V_index_i_1/O
+                         net (fo=20, routed)          1.100     3.332    V_counter_addressable[10]
+    DSP48_X1Y10          DSP48E1 (Prop_dsp48e1_A[19]_P[16])
+                                                      4.045     7.377 f  H_V_index/P[16]
+                         net (fo=1, routed)           1.023     8.400    cnts/P[16]
+    SLICE_X54Y28         LUT6 (Prop_lut6_I0_O)        0.124     8.524 f  cnts/img_mem_i_1/O
+                         net (fo=28, routed)          4.072    12.596    img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/bindec_a.bindec_inst_a/addra[4]
+    SLICE_X10Y6          LUT5 (Prop_lut5_I1_O)        0.124    12.720 r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/bindec_a.bindec_inst_a/ENOUT__5/O
+                         net (fo=1, routed)           0.506    13.226    img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/prim_init.ram/ena_array[0]
+    RAMB36_X0Y1          RAMB36E1                                     r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ENARDEN
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 cnts/Q2_value_reg[0]/C
-                            (rising edge-triggered cell FDCE)
-  Destination:            your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[21].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[10]
+  Source:                 img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[1]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            RED[1]
+                            (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        14.213ns  (logic 4.793ns (33.722%)  route 9.420ns (66.278%))
-  Logic Levels:           6  (DSP48E1=1 FDCE=1 LUT3=1 LUT4=1 LUT5=1 LUT6=1)
+  Data Path Delay:        13.139ns  (logic 4.766ns (36.277%)  route 8.372ns (63.723%))
+  Logic Levels:           6  (FDRE=1 LUT5=2 LUT6=1 MUXF7=1 OBUF=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X48Y20         FDCE                         0.000     0.000 r  cnts/Q2_value_reg[0]/C
-    SLICE_X48Y20         FDCE (Prop_fdce_C_Q)         0.456     0.456 f  cnts/Q2_value_reg[0]/Q
-                         net (fo=11, routed)          0.986     1.442    cnts/Q2_value_reg_n_0_[0]
-    SLICE_X50Y21         LUT4 (Prop_lut4_I2_O)        0.124     1.566 r  cnts/memAddr0_i_18/O
-                         net (fo=4, routed)           0.309     1.875    cnts/memAddr0_i_18_n_0
-    SLICE_X50Y21         LUT5 (Prop_lut5_I3_O)        0.124     1.999 f  cnts/RED_OBUF[3]_inst_i_5/O
-                         net (fo=31, routed)          1.183     3.182    cnts/RED_OBUF[3]_inst_i_5_n_0
-    SLICE_X55Y22         LUT3 (Prop_lut3_I0_O)        0.124     3.306 r  cnts/memAddr0_i_8/O
-                         net (fo=20, routed)          1.009     4.315    A[10]
-    DSP48_X1Y8           DSP48E1 (Prop_dsp48e1_A[11]_P[7])
-                                                      3.841     8.156 r  memAddr0/P[7]
-                         net (fo=1, routed)           0.619     8.774    cnts/P[7]
-    SLICE_X56Y21         LUT6 (Prop_lut6_I0_O)        0.124     8.898 r  cnts/your_instance_name_i_10/O
-                         net (fo=27, routed)          5.315    14.213    your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[21].ram.r/prim_init.ram/addra[7]
-    RAMB36_X0Y6          RAMB36E1                                     r  your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[21].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[10]
+    SLICE_X32Y31         FDRE                         0.000     0.000 r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[1]/C
+    SLICE_X32Y31         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[1]/Q
+                         net (fo=45, routed)          2.806     3.262    img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/sel_pipe_d1[1]
+    SLICE_X48Y35         LUT6 (Prop_lut6_I2_O)        0.124     3.386 r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/douta[9]_INST_0_i_5/O
+                         net (fo=1, routed)           0.000     3.386    img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/douta[9]_INST_0_i_5_n_0
+    SLICE_X48Y35         MUXF7 (Prop_muxf7_I1_O)      0.245     3.631 r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/douta[9]_INST_0_i_2/O
+                         net (fo=1, routed)           1.444     5.075    img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/douta[9]_INST_0_i_2_n_0
+    SLICE_X40Y27         LUT5 (Prop_lut5_I2_O)        0.298     5.373 r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/douta[9]_INST_0/O
+                         net (fo=1, routed)           0.812     6.185    cnts/douta[9]
+    SLICE_X42Y27         LUT5 (Prop_lut5_I4_O)        0.124     6.309 r  cnts/RED_OBUF[1]_inst_i_1/O
+                         net (fo=1, routed)           3.310     9.619    RED_OBUF[1]
+    H19                  OBUF (Prop_obuf_I_O)         3.519    13.139 r  RED_OBUF[1]_inst/O
+                         net (fo=0)                   0.000    13.139    RED[1]
+    H19                                                               r  RED[1] (OUT)
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 cnts/Q2_value_reg[0]/C
+  Source:                 cnts/Q2_value_reg[4]/C
                             (rising edge-triggered cell FDCE)
-  Destination:            your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[11]
+  Destination:            img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram/ADDRARDADDR[4]
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        14.201ns  (logic 4.793ns (33.750%)  route 9.408ns (66.250%))
-  Logic Levels:           6  (DSP48E1=1 FDCE=1 LUT3=1 LUT4=1 LUT5=1 LUT6=1)
+  Data Path Delay:        13.068ns  (logic 4.899ns (37.487%)  route 8.169ns (62.513%))
+  Logic Levels:           5  (DSP48E1=1 FDCE=1 LUT5=1 LUT6=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X48Y20         FDCE                         0.000     0.000 r  cnts/Q2_value_reg[0]/C
-    SLICE_X48Y20         FDCE (Prop_fdce_C_Q)         0.456     0.456 f  cnts/Q2_value_reg[0]/Q
-                         net (fo=11, routed)          0.986     1.442    cnts/Q2_value_reg_n_0_[0]
-    SLICE_X50Y21         LUT4 (Prop_lut4_I2_O)        0.124     1.566 r  cnts/memAddr0_i_18/O
-                         net (fo=4, routed)           0.309     1.875    cnts/memAddr0_i_18_n_0
-    SLICE_X50Y21         LUT5 (Prop_lut5_I3_O)        0.124     1.999 f  cnts/RED_OBUF[3]_inst_i_5/O
-                         net (fo=31, routed)          1.183     3.182    cnts/RED_OBUF[3]_inst_i_5_n_0
-    SLICE_X55Y22         LUT3 (Prop_lut3_I0_O)        0.124     3.306 r  cnts/memAddr0_i_8/O
-                         net (fo=20, routed)          1.009     4.315    A[10]
-    DSP48_X1Y8           DSP48E1 (Prop_dsp48e1_A[11]_P[8])
-                                                      3.841     8.156 r  memAddr0/P[8]
-                         net (fo=1, routed)           0.786     8.942    cnts/P[8]
-    SLICE_X53Y22         LUT6 (Prop_lut6_I0_O)        0.124     9.066 r  cnts/your_instance_name_i_9/O
-                         net (fo=27, routed)          5.136    14.201    your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/prim_init.ram/addra[8]
-    RAMB36_X0Y7          RAMB36E1                                     r  your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[11]
+    SLICE_X53Y25         FDCE                         0.000     0.000 r  cnts/Q2_value_reg[4]/C
+    SLICE_X53Y25         FDCE (Prop_fdce_C_Q)         0.456     0.456 f  cnts/Q2_value_reg[4]/Q
+                         net (fo=8, routed)           1.016     1.472    cnts/Q2_value_reg_n_0_[4]
+    SLICE_X54Y27         LUT6 (Prop_lut6_I3_O)        0.124     1.596 f  cnts/img_mem_i_18/O
+                         net (fo=22, routed)          0.487     2.083    cnts/img_mem_i_18_n_0
+    SLICE_X54Y27         LUT5 (Prop_lut5_I0_O)        0.150     2.233 r  cnts/H_V_index_i_1/O
+                         net (fo=20, routed)          1.100     3.332    V_counter_addressable[10]
+    DSP48_X1Y10          DSP48E1 (Prop_dsp48e1_A[19]_P[4])
+                                                      4.045     7.377 r  H_V_index/P[4]
+                         net (fo=1, routed)           0.985     8.363    cnts/P[4]
+    SLICE_X55Y26         LUT6 (Prop_lut6_I0_O)        0.124     8.487 r  cnts/img_mem_i_13/O
+                         net (fo=27, routed)          4.582    13.068    img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/addra[4]
+    RAMB18_X0Y12         RAMB18E1                                     r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM18.ram/ADDRARDADDR[4]
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 cnts/Q2_value_reg[0]/C
+  Source:                 cnts/Q2_value_reg[4]/C
                             (rising edge-triggered cell FDCE)
-  Destination:            your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[9]
+  Destination:            img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[3]
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        14.176ns  (logic 4.793ns (33.812%)  route 9.383ns (66.188%))
-  Logic Levels:           6  (DSP48E1=1 FDCE=1 LUT3=1 LUT4=1 LUT5=1 LUT6=1)
+  Data Path Delay:        13.063ns  (logic 4.899ns (37.502%)  route 8.164ns (62.498%))
+  Logic Levels:           5  (DSP48E1=1 FDCE=1 LUT5=1 LUT6=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X48Y20         FDCE                         0.000     0.000 r  cnts/Q2_value_reg[0]/C
-    SLICE_X48Y20         FDCE (Prop_fdce_C_Q)         0.456     0.456 f  cnts/Q2_value_reg[0]/Q
-                         net (fo=11, routed)          0.986     1.442    cnts/Q2_value_reg_n_0_[0]
-    SLICE_X50Y21         LUT4 (Prop_lut4_I2_O)        0.124     1.566 r  cnts/memAddr0_i_18/O
-                         net (fo=4, routed)           0.309     1.875    cnts/memAddr0_i_18_n_0
-    SLICE_X50Y21         LUT5 (Prop_lut5_I3_O)        0.124     1.999 f  cnts/RED_OBUF[3]_inst_i_5/O
-                         net (fo=31, routed)          1.183     3.182    cnts/RED_OBUF[3]_inst_i_5_n_0
-    SLICE_X55Y22         LUT3 (Prop_lut3_I0_O)        0.124     3.306 r  cnts/memAddr0_i_8/O
-                         net (fo=20, routed)          1.009     4.315    A[10]
-    DSP48_X1Y8           DSP48E1 (Prop_dsp48e1_A[11]_P[6])
-                                                      3.841     8.156 r  memAddr0/P[6]
-                         net (fo=1, routed)           0.501     8.656    cnts/P[6]
-    SLICE_X56Y21         LUT6 (Prop_lut6_I0_O)        0.124     8.780 r  cnts/your_instance_name_i_11/O
-                         net (fo=27, routed)          5.395    14.176    your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/prim_init.ram/addra[6]
-    RAMB36_X0Y3          RAMB36E1                                     r  your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[9]
+    SLICE_X53Y25         FDCE                         0.000     0.000 r  cnts/Q2_value_reg[4]/C
+    SLICE_X53Y25         FDCE (Prop_fdce_C_Q)         0.456     0.456 f  cnts/Q2_value_reg[4]/Q
+                         net (fo=8, routed)           1.016     1.472    cnts/Q2_value_reg_n_0_[4]
+    SLICE_X54Y27         LUT6 (Prop_lut6_I3_O)        0.124     1.596 f  cnts/img_mem_i_18/O
+                         net (fo=22, routed)          0.487     2.083    cnts/img_mem_i_18_n_0
+    SLICE_X54Y27         LUT5 (Prop_lut5_I0_O)        0.150     2.233 r  cnts/H_V_index_i_1/O
+                         net (fo=20, routed)          1.100     3.332    V_counter_addressable[10]
+    DSP48_X1Y10          DSP48E1 (Prop_dsp48e1_A[19]_P[0])
+                                                      4.045     7.377 r  H_V_index/P[0]
+                         net (fo=1, routed)           0.793     8.171    cnts/P[0]
+    SLICE_X54Y25         LUT6 (Prop_lut6_I0_O)        0.124     8.295 r  cnts/img_mem_i_17/O
+                         net (fo=27, routed)          4.769    13.063    img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/prim_init.ram/addra[0]
+    RAMB36_X1Y9          RAMB36E1                                     r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[3]
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 cnts/Q2_value_reg[0]/C
+  Source:                 cnts/Q2_value_reg[4]/C
                             (rising edge-triggered cell FDCE)
-  Destination:            your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[14]
+  Destination:            img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[22].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[9]
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        14.116ns  (logic 4.793ns (33.954%)  route 9.323ns (66.046%))
-  Logic Levels:           6  (DSP48E1=1 FDCE=1 LUT3=1 LUT4=1 LUT5=1 LUT6=1)
+  Data Path Delay:        13.052ns  (logic 4.899ns (37.534%)  route 8.153ns (62.466%))
+  Logic Levels:           5  (DSP48E1=1 FDCE=1 LUT5=1 LUT6=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X48Y20         FDCE                         0.000     0.000 r  cnts/Q2_value_reg[0]/C
-    SLICE_X48Y20         FDCE (Prop_fdce_C_Q)         0.456     0.456 f  cnts/Q2_value_reg[0]/Q
-                         net (fo=11, routed)          0.986     1.442    cnts/Q2_value_reg_n_0_[0]
-    SLICE_X50Y21         LUT4 (Prop_lut4_I2_O)        0.124     1.566 r  cnts/memAddr0_i_18/O
-                         net (fo=4, routed)           0.309     1.875    cnts/memAddr0_i_18_n_0
-    SLICE_X50Y21         LUT5 (Prop_lut5_I3_O)        0.124     1.999 f  cnts/RED_OBUF[3]_inst_i_5/O
-                         net (fo=31, routed)          1.183     3.182    cnts/RED_OBUF[3]_inst_i_5_n_0
-    SLICE_X55Y22         LUT3 (Prop_lut3_I0_O)        0.124     3.306 r  cnts/memAddr0_i_8/O
-                         net (fo=20, routed)          1.009     4.315    A[10]
-    DSP48_X1Y8           DSP48E1 (Prop_dsp48e1_A[11]_P[11])
-                                                      3.841     8.156 r  memAddr0/P[11]
-                         net (fo=1, routed)           0.786     8.942    cnts/P[11]
-    SLICE_X53Y22         LUT6 (Prop_lut6_I0_O)        0.124     9.066 r  cnts/your_instance_name_i_6/O
-                         net (fo=27, routed)          5.050    14.116    your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/prim_init.ram/addra[11]
-    RAMB36_X0Y7          RAMB36E1                                     r  your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[14]
+    SLICE_X53Y25         FDCE                         0.000     0.000 r  cnts/Q2_value_reg[4]/C
+    SLICE_X53Y25         FDCE (Prop_fdce_C_Q)         0.456     0.456 f  cnts/Q2_value_reg[4]/Q
+                         net (fo=8, routed)           1.016     1.472    cnts/Q2_value_reg_n_0_[4]
+    SLICE_X54Y27         LUT6 (Prop_lut6_I3_O)        0.124     1.596 f  cnts/img_mem_i_18/O
+                         net (fo=22, routed)          0.487     2.083    cnts/img_mem_i_18_n_0
+    SLICE_X54Y27         LUT5 (Prop_lut5_I0_O)        0.150     2.233 r  cnts/H_V_index_i_1/O
+                         net (fo=20, routed)          1.100     3.332    V_counter_addressable[10]
+    DSP48_X1Y10          DSP48E1 (Prop_dsp48e1_A[19]_P[6])
+                                                      4.045     7.377 r  H_V_index/P[6]
+                         net (fo=1, routed)           0.826     8.204    cnts/P[6]
+    SLICE_X55Y26         LUT6 (Prop_lut6_I0_O)        0.124     8.328 r  cnts/img_mem_i_11/O
+                         net (fo=27, routed)          4.725    13.052    img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[22].ram.r/prim_init.ram/addra[6]
+    RAMB36_X0Y5          RAMB36E1                                     r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[22].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[9]
   -------------------------------------------------------------------    -------------------
 
 
@@ -660,105 +644,54 @@ Slack:                    inf
 Min Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
-  Source:                 your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]/C
+  Source:                 img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[1]/D
+  Destination:            img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[1]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.276ns  (logic 0.164ns (59.419%)  route 0.112ns (40.581%))
+  Data Path Delay:        0.256ns  (logic 0.141ns (55.114%)  route 0.115ns (44.886%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X10Y29         FDRE                         0.000     0.000 r  your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]/C
-    SLICE_X10Y29         FDRE (Prop_fdre_C_Q)         0.164     0.164 r  your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]/Q
-                         net (fo=1, routed)           0.112     0.276    your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/sel_pipe[1]
-    SLICE_X10Y29         FDRE                                         r  your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[1]/D
+    SLICE_X32Y31         FDRE                         0.000     0.000 r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]/C
+    SLICE_X32Y31         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[1]/Q
+                         net (fo=1, routed)           0.115     0.256    img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/sel_pipe[1]
+    SLICE_X32Y31         FDRE                                         r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C
+  Source:                 img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[0]/D
+  Destination:            img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[0]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.280ns  (logic 0.164ns (58.537%)  route 0.116ns (41.463%))
+  Data Path Delay:        0.266ns  (logic 0.141ns (53.032%)  route 0.125ns (46.968%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X10Y29         FDRE                         0.000     0.000 r  your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C
-    SLICE_X10Y29         FDRE (Prop_fdre_C_Q)         0.164     0.164 r  your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/Q
-                         net (fo=1, routed)           0.116     0.280    your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/sel_pipe[0]
-    SLICE_X10Y29         FDRE                                         r  your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[0]/D
+    SLICE_X32Y31         FDRE                         0.000     0.000 r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C
+    SLICE_X32Y31         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/Q
+                         net (fo=1, routed)           0.125     0.266    img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/sel_pipe[0]
+    SLICE_X32Y31         FDRE                                         r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[2]/C
+  Source:                 img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[2]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[2]/D
+  Destination:            img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[2]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.359ns  (logic 0.164ns (45.734%)  route 0.195ns (54.266%))
+  Data Path Delay:        0.351ns  (logic 0.141ns (40.187%)  route 0.210ns (59.813%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X12Y30         FDRE                         0.000     0.000 r  your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[2]/C
-    SLICE_X12Y30         FDRE (Prop_fdre_C_Q)         0.164     0.164 r  your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[2]/Q
-                         net (fo=22, routed)          0.195     0.359    your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/sel_pipe[2]
-    SLICE_X12Y27         FDRE                                         r  your_instance_name/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[2]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 cnts/TC_reg/C
-                            (rising edge-triggered cell FDCE)
-  Destination:            cnts/Q2_value_reg[28]/CE
-  Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.363ns  (logic 0.128ns (35.216%)  route 0.235ns (64.784%))
-  Logic Levels:           1  (FDCE=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X55Y27         FDCE                         0.000     0.000 r  cnts/TC_reg/C
-    SLICE_X55Y27         FDCE (Prop_fdce_C_Q)         0.128     0.128 r  cnts/TC_reg/Q
-                         net (fo=32, routed)          0.235     0.363    cnts/TC
-    SLICE_X50Y26         FDCE                                         r  cnts/Q2_value_reg[28]/CE
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 cnts/TC_reg/C
-                            (rising edge-triggered cell FDCE)
-  Destination:            cnts/Q2_value_reg[29]/CE
-  Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.363ns  (logic 0.128ns (35.216%)  route 0.235ns (64.784%))
-  Logic Levels:           1  (FDCE=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X55Y27         FDCE                         0.000     0.000 r  cnts/TC_reg/C
-    SLICE_X55Y27         FDCE (Prop_fdce_C_Q)         0.128     0.128 r  cnts/TC_reg/Q
-                         net (fo=32, routed)          0.235     0.363    cnts/TC
-    SLICE_X50Y26         FDCE                                         r  cnts/Q2_value_reg[29]/CE
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 cnts/TC_reg/C
-                            (rising edge-triggered cell FDCE)
-  Destination:            cnts/Q2_value_reg[31]/CE
-  Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.363ns  (logic 0.128ns (35.216%)  route 0.235ns (64.784%))
-  Logic Levels:           1  (FDCE=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X55Y27         FDCE                         0.000     0.000 r  cnts/TC_reg/C
-    SLICE_X55Y27         FDCE (Prop_fdce_C_Q)         0.128     0.128 r  cnts/TC_reg/Q
-                         net (fo=32, routed)          0.235     0.363    cnts/TC
-    SLICE_X50Y26         FDCE                                         r  cnts/Q2_value_reg[31]/CE
+    SLICE_X36Y29         FDRE                         0.000     0.000 r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[2]/C
+    SLICE_X36Y29         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[2]/Q
+                         net (fo=22, routed)          0.210     0.351    img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/sel_pipe[2]
+    SLICE_X36Y29         FDRE                                         r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
@@ -781,54 +714,109 @@ Slack:                    inf
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 cnts/TC_reg/C
+  Source:                 cnts/Q1_value_reg[0]/C
                             (rising edge-triggered cell FDCE)
-  Destination:            cnts/Q2_value_reg[21]/CE
+  Destination:            cnts/Q1_value_reg[0]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.446ns  (logic 0.128ns (28.709%)  route 0.318ns (71.291%))
-  Logic Levels:           1  (FDCE=1)
+  Data Path Delay:        0.409ns  (logic 0.209ns (51.154%)  route 0.200ns (48.846%))
+  Logic Levels:           2  (FDCE=1 LUT5=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X55Y27         FDCE                         0.000     0.000 r  cnts/TC_reg/C
-    SLICE_X55Y27         FDCE (Prop_fdce_C_Q)         0.128     0.128 r  cnts/TC_reg/Q
-                         net (fo=32, routed)          0.318     0.446    cnts/TC
-    SLICE_X49Y25         FDCE                                         r  cnts/Q2_value_reg[21]/CE
+    SLICE_X60Y26         FDCE                         0.000     0.000 r  cnts/Q1_value_reg[0]/C
+    SLICE_X60Y26         FDCE (Prop_fdce_C_Q)         0.164     0.164 f  cnts/Q1_value_reg[0]/Q
+                         net (fo=4, routed)           0.200     0.364    cnts/C[0]
+    SLICE_X60Y26         LUT5 (Prop_lut5_I0_O)        0.045     0.409 r  cnts/Q1_value[0]_i_1/O
+                         net (fo=1, routed)           0.000     0.409    cnts/Q1_value[0]
+    SLICE_X60Y26         FDCE                                         r  cnts/Q1_value_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 cnts/Q2_value_reg[0]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            cnts/Q2_value_reg[0]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.418ns  (logic 0.207ns (49.552%)  route 0.211ns (50.448%))
+  Logic Levels:           2  (FDCE=1 LUT1=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X54Y25         FDCE                         0.000     0.000 r  cnts/Q2_value_reg[0]/C
+    SLICE_X54Y25         FDCE (Prop_fdce_C_Q)         0.164     0.164 f  cnts/Q2_value_reg[0]/Q
+                         net (fo=11, routed)          0.211     0.375    cnts/Q2_value_reg_n_0_[0]
+    SLICE_X54Y25         LUT1 (Prop_lut1_I0_O)        0.043     0.418 r  cnts/Q2_value[0]_i_1/O
+                         net (fo=2, routed)           0.000     0.418    cnts/A[0]
+    SLICE_X54Y25         FDCE                                         r  cnts/Q2_value_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
   Source:                 cnts/TC_reg/C
                             (rising edge-triggered cell FDCE)
-  Destination:            cnts/Q2_value_reg[24]/CE
+  Destination:            cnts/Q2_value_reg[29]/CE
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.446ns  (logic 0.128ns (28.709%)  route 0.318ns (71.291%))
+  Data Path Delay:        0.419ns  (logic 0.128ns (30.559%)  route 0.291ns (69.441%))
   Logic Levels:           1  (FDCE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X55Y27         FDCE                         0.000     0.000 r  cnts/TC_reg/C
-    SLICE_X55Y27         FDCE (Prop_fdce_C_Q)         0.128     0.128 r  cnts/TC_reg/Q
-                         net (fo=32, routed)          0.318     0.446    cnts/TC
-    SLICE_X49Y25         FDCE                                         r  cnts/Q2_value_reg[24]/CE
+    SLICE_X59Y32         FDCE                         0.000     0.000 r  cnts/TC_reg/C
+    SLICE_X59Y32         FDCE (Prop_fdce_C_Q)         0.128     0.128 r  cnts/TC_reg/Q
+                         net (fo=32, routed)          0.291     0.419    cnts/TC
+    SLICE_X53Y32         FDCE                                         r  cnts/Q2_value_reg[29]/CE
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
   Source:                 cnts/TC_reg/C
                             (rising edge-triggered cell FDCE)
-  Destination:            cnts/Q2_value_reg[22]/CE
+  Destination:            cnts/Q2_value_reg[30]/CE
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.480ns  (logic 0.128ns (26.688%)  route 0.352ns (73.312%))
+  Data Path Delay:        0.419ns  (logic 0.128ns (30.559%)  route 0.291ns (69.441%))
   Logic Levels:           1  (FDCE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X55Y27         FDCE                         0.000     0.000 r  cnts/TC_reg/C
-    SLICE_X55Y27         FDCE (Prop_fdce_C_Q)         0.128     0.128 r  cnts/TC_reg/Q
-                         net (fo=32, routed)          0.352     0.480    cnts/TC
-    SLICE_X50Y25         FDCE                                         r  cnts/Q2_value_reg[22]/CE
+    SLICE_X59Y32         FDCE                         0.000     0.000 r  cnts/TC_reg/C
+    SLICE_X59Y32         FDCE (Prop_fdce_C_Q)         0.128     0.128 r  cnts/TC_reg/Q
+                         net (fo=32, routed)          0.291     0.419    cnts/TC
+    SLICE_X53Y32         FDCE                                         r  cnts/Q2_value_reg[30]/CE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 cnts/TC_reg/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            cnts/Q2_value_reg[31]/CE
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.419ns  (logic 0.128ns (30.559%)  route 0.291ns (69.441%))
+  Logic Levels:           1  (FDCE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X59Y32         FDCE                         0.000     0.000 r  cnts/TC_reg/C
+    SLICE_X59Y32         FDCE (Prop_fdce_C_Q)         0.128     0.128 r  cnts/TC_reg/Q
+                         net (fo=32, routed)          0.291     0.419    cnts/TC
+    SLICE_X53Y32         FDCE                                         r  cnts/Q2_value_reg[31]/CE
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[3]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[3]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.425ns  (logic 0.141ns (33.157%)  route 0.284ns (66.843%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y29         FDRE                         0.000     0.000 r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[3]/C
+    SLICE_X36Y29         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[3]/Q
+                         net (fo=22, routed)          0.284     0.425    img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/sel_pipe[3]
+    SLICE_X40Y27         FDRE                                         r  img_mem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[3]/D
   -------------------------------------------------------------------    -------------------
 
 

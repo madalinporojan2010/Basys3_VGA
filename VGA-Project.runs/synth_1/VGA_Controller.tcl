@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.runs/synth_1/VGA_Controller.tcl"
+  variable script "C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.runs/synth_1/VGA_Controller.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,11 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
-set_param chipscope.maxJobs 4
-set_param synth.incrementalSynthesisCache C:/Users/Madalin/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-24680-DESKTOP-6LNBR6U/incrSyn
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -82,25 +77,26 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.cache/wt [current_project]
-set_property parent.project_path C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.cache/wt [current_project]
+set_property parent.project_path C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.xpr [current_project]
 set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.cache/ip [current_project]
+set_property ip_output_repo c:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 add_files C:/Users/Madalin/OneDrive/SSC/img_src/converted/img1.coe
-read_mem C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.srcs/sources_1/new/image1.mem
+add_files c:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/ip/img2.coe
+read_mem C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/new/image1.mem
 read_vhdl -library xil_defaultlib {
-  C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.srcs/sources_1/new/Comparators.vhd
-  C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.srcs/sources_1/new/Counters.vhd
-  C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.srcs/sources_1/new/Frequency_Divider.vhd
-  C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.srcs/sources_1/new/VGA_Controller.vhd
+  C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/new/Comparators.vhd
+  C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/new/Counters.vhd
+  C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/new/Frequency_Divider.vhd
+  C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/new/VGA_Controller.vhd
 }
-read_ip -quiet C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.srcs/sources_1/ip/BRAM_img1/BRAM_img1.xci
-set_property used_in_implementation false [get_files -all c:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.gen/sources_1/ip/BRAM_img1/BRAM_img1_ooc.xdc]
+read_ip -quiet C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/ip/BRAM_img1/BRAM_img1.xci
+set_property used_in_implementation false [get_files -all c:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.gen/sources_1/ip/BRAM_img1/BRAM_img1_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -111,8 +107,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.srcs/constrs_1/new/Basys3.xdc
-set_property used_in_implementation false [get_files C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.srcs/constrs_1/new/Basys3.xdc]
+read_xdc C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/constrs_1/new/Basys3.xdc
+set_property used_in_implementation false [get_files C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/constrs_1/new/Basys3.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 

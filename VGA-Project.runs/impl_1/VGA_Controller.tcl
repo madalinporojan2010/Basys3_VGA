@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.runs/impl_1/VGA_Controller.tcl"
+  variable script "C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.runs/impl_1/VGA_Controller.tcl"
   variable category "vivado_impl"
 }
 
@@ -115,8 +115,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -124,26 +122,24 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param checkpoint.writeSynthRtdsInDcp 1
   set_param chipscope.maxJobs 4
-  set_param synth.incrementalSynthesisCache C:/Users/Madalin/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-24680-DESKTOP-6LNBR6U/incrSyn
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a35tcpg236-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.cache/wt [current_project]
-  set_property parent.project_path C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.xpr [current_project]
-  set_property ip_output_repo C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.cache/wt [current_project]
+  set_property parent.project_path C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.xpr [current_project]
+  set_property ip_output_repo C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.runs/synth_1/VGA_Controller.dcp
-  read_ip -quiet C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.srcs/sources_1/ip/BRAM_img1/BRAM_img1.xci
+  add_files -quiet C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.runs/synth_1/VGA_Controller.dcp
+  read_ip -quiet C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/ip/BRAM_img1/BRAM_img1.xci
 OPTRACE "read constraints: implementation" START { }
-  read_xdc C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.srcs/constrs_1/new/Basys3.xdc
+  read_xdc C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/constrs_1/new/Basys3.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

@@ -1,4 +1,0 @@
-ERROR: Exception caught trying to open file C:\Users\Madalin\OneDrive\SSC\VGA-Project\VGA-Project.runs\synth_1/runme.log
-	Exception name: Error
-	Exception error code: 70
-	Exception message: Permission denied

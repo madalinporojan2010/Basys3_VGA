@@ -1,10 +1,10 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
--- Date        : Sun Oct 16 11:59:09 2022
+-- Date        : Fri Oct 21 18:04:27 2022
 -- Host        : DESKTOP-6LNBR6U running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.gen/sources_1/ip/BRAM_img1/BRAM_img1_stub.vhdl
+--               c:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.gen/sources_1/ip/BRAM_img1/BRAM_img1_stub.vhdl
 -- Design      : BRAM_img1
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35tcpg236-1

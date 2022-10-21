@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1665911798" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Frequency_Divider.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1666364611" LaunchIncrCheckpoint="$PPRDIR/../../../OneDrive/SSC/VGA-Project/VGA-Project.srcs/utils_1/imports/synth_1/Frequency_Divider.dcp">
   <File Type="PA-TCL" Name="VGA_Controller.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="VGA_Controller_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="VGA_Controller_reports.tcl"/>
@@ -41,7 +41,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../img_src/converted/img1.coe">
+    <File Path="$PPRDIR/../../../OneDrive/SSC/img_src/converted/img1.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/img2.coe">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -68,6 +74,14 @@
   <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
     <Filter Type="Utils"/>
     <File Path="$PSRCDIR/utils_1/imports/synth_1/Frequency_Divider.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../OneDrive/SSC/VGA-Project/VGA-Project.srcs/utils_1/imports/synth_1/Frequency_Divider.dcp">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
