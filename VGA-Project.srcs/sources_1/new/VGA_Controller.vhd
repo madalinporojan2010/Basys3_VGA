@@ -22,15 +22,6 @@ LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.NUMERIC_STD.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 ENTITY VGA_Controller IS
     PORT (
         clk   : IN  STD_LOGIC;
@@ -128,24 +119,12 @@ BEGIN
             Display_Area => Display_Area
         );
 
-    --     mem : entity work.Img_Memory(Behavioral)
-    --           generic map (
-    --                RAM_HEIGHT => HEIGHT,
-    --                RAM_WIDTH => WIDTH
-    --           )
-    --           port map (
-    --                H_counter => H_counter,
-    --                V_counter => V_counter,
-    --                data => Img_Data
-    --           );
-
-    -- cur_row * n_columns + cur_col
-    H_counter_addressable <= to_integer(unsigned(H_counter)) - 144;
-    V_counter_addressable <= to_integer(unsigned(V_counter)) - 35;
-    H_V_index             <= V_counter_addressable * 320 + H_counter_addressable;
+    H_counter_addressable <= to_integer(unsigned(H_counter)) - H_MIN_ADDRESSABLE;
+    V_counter_addressable <= to_integer(unsigned(V_counter)) - V_MIN_ADDRESSABLE;
+    H_V_index             <= V_counter_addressable * WIDTH + H_counter_addressable;
 
     memAddr               <= STD_LOGIC_VECTOR(to_unsigned(H_V_index, memAddr'length))
-               WHEN Display_Area = '1' AND (V_counter_addressable < 240) AND (H_counter_addressable < 320) AND (V_counter_addressable >= 0) AND (H_counter_addressable >= 0) ELSE
+               WHEN Display_Area = '1' AND (V_counter_addressable < HEIGHT) AND (H_counter_addressable < WIDTH) AND (V_counter_addressable >= 0) AND (H_counter_addressable >= 0) ELSE
                "11111111111111111";
     img_mem : BRAM_img1
     PORT MAP(
@@ -158,7 +137,7 @@ BEGIN
 
     color_mux : PROCESS (Display_Area) IS
     BEGIN
-        IF Display_Area = '1' AND (V_counter_addressable < 240) AND (H_counter_addressable < 320) AND (V_counter_addressable >= 0) AND (H_counter_addressable >= 0) THEN
+        IF Display_Area = '1' AND (V_counter_addressable < HEIGHT) AND (H_counter_addressable < WIDTH) AND (V_counter_addressable >= 0) AND (H_counter_addressable >= 0) THEN
             RED_temp   <= Img_data(11 DOWNTO 8);
             GREEN_temp <= Img_data(7 DOWNTO 4);
             BLUE_temp  <= Img_data(3 DOWNTO 0);
