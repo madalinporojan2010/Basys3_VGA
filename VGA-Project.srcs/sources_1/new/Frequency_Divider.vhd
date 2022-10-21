@@ -18,10 +18,9 @@
 -- 
 ----------------------------------------------------------------------------------
 
-
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.std_logic_arith.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.std_logic_arith.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -32,40 +31,41 @@ use IEEE.std_logic_arith.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Frequency_Divider is
-    Port ( clk : in STD_LOGIC;
-           clk_25Mhz : out STD_LOGIC);
-end Frequency_Divider;
+ENTITY Frequency_Divider IS
+    PORT (
+        clk       : IN  STD_LOGIC;
+        clk_25Mhz : OUT STD_LOGIC);
+END Frequency_Divider;
 
-architecture Behavioral of Frequency_Divider is
-signal Q1: STD_LOGIC := '0';
-signal Q2: STD_LOGIC := '0';
+ARCHITECTURE Behavioral OF Frequency_Divider IS
+    SIGNAL Q1            : STD_LOGIC := '0';
+    SIGNAL Q2            : STD_LOGIC := '0';
 
-signal D1: STD_LOGIC := '0';
-signal D2: STD_LOGIC := '0';
+    SIGNAL D1            : STD_LOGIC := '0';
+    SIGNAL D2            : STD_LOGIC := '0';
 
-signal clk_50Mhz_not: STD_LOGIC := '0';
-begin
+    SIGNAL clk_50Mhz_not : STD_LOGIC := '0';
+BEGIN
     -- Bistabile D
     -- Avem nevoie de 2 bistabile D, deoarece e necesar un semnal de 25 Mhz => 100 Mhz / 2 / 2 => 25 Mhz
-   
-    D1 <= not Q1;
-    D2 <= not Q2;
-    
-    D_1: process(clk) is
-    begin
-        if rising_edge(clk) then
+
+    D1 <= NOT Q1;
+    D2 <= NOT Q2;
+
+    D_1 : PROCESS (clk) IS
+    BEGIN
+        IF rising_edge(clk) THEN
             Q1 <= D1;
-        end if;
-    end process;
-    
-    D_2: process(clk_50Mhz_not) is
-    begin
-        if rising_edge(clk_50Mhz_not) then
+        END IF;
+    END PROCESS;
+
+    D_2 : PROCESS (clk_50Mhz_not) IS
+    BEGIN
+        IF rising_edge(clk_50Mhz_not) THEN
             Q2 <= D2;
-        end if;
-    end process;
-    
-    clk_25Mhz <= Q2;
-    clk_50Mhz_not <= not Q1;
-end Behavioral;
+        END IF;
+    END PROCESS;
+
+    clk_25Mhz     <= Q2;
+    clk_50Mhz_not <= NOT Q1;
+END Behavioral;
