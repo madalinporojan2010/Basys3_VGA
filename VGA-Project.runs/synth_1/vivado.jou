@@ -2,8 +2,8 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Sat Oct 22 00:03:54 2022
-# Process ID: 13180
+# Start of session at: Sat Oct 22 09:12:30 2022
+# Process ID: 5676
 # Current directory: C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.runs/synth_1
 # Command line: vivado.exe -log VGA_Controller.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source VGA_Controller.tcl
 # Log file: C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.runs/synth_1/VGA_Controller.vds
