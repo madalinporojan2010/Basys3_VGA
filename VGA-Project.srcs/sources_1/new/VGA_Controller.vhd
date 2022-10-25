@@ -36,14 +36,15 @@ ENTITY VGA_Controller IS
         clk   : IN  STD_LOGIC;
         rst   : IN  STD_LOGIC;
 
+        inc   : IN  STD_LOGIC;
+        dec   : IN  STD_LOGIC;
+
         RED   : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
         GREEN : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
         BLUE  : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
 
         HS    : OUT STD_LOGIC;
-        VS    : OUT STD_LOGIC;
-
-        sw    : IN  STD_LOGIC_VECTOR(4 DOWNTO 0)
+        VS    : OUT STD_LOGIC
     );
 END VGA_Controller;
 
@@ -66,6 +67,10 @@ ARCHITECTURE Behavioral OF VGA_Controller IS
     CONSTANT V_MIN_HS_VS_GENERATION : INTEGER                        := 0;
     CONSTANT V_MAX_HS_VS_GENERATION : INTEGER                        := 2;
 
+    SIGNAL rst_debounced            : STD_LOGIC                      := '0';
+    SIGNAL inc_debounced            : STD_LOGIC                      := '0';
+    SIGNAL dec_debounced            : STD_LOGIC                      := '0';
+
     SIGNAL clk_25Mhz                : STD_LOGIC                      := '0';
     SIGNAL H_counter                : STD_LOGIC_VECTOR (9 DOWNTO 0)  := (OTHERS => '0');
     SIGNAL V_counter                : STD_LOGIC_VECTOR (9 DOWNTO 0)  := (OTHERS => '0');
@@ -81,6 +86,8 @@ ARCHITECTURE Behavioral OF VGA_Controller IS
 
     SIGNAL Img_data                 : STD_LOGIC_VECTOR (4 DOWNTO 0)  := (OTHERS => '0');
     SIGNAL memAddr                  : STD_LOGIC_VECTOR (18 DOWNTO 0) := (OTHERS => '0');
+
+    SIGNAL Img_Control              : INTEGER                        := 0;
 
     COMPONENT BRAM_img1
         PORT (
@@ -106,7 +113,7 @@ BEGIN
         )
         PORT MAP(
             clk       => clk_25Mhz,
-            rst       => rst,
+            rst       => rst_debounced,
             H_counter => H_counter,
             V_counter => V_counter
         );
@@ -130,6 +137,38 @@ BEGIN
             Display_Area => Display_Area
         );
 
+    mpg1 : ENTITY work.mpg(Behavioral)
+        PORT MAP(
+            Clk    => clk,
+            Btn    => rst,
+            Enable => rst_debounced
+        );
+    mpg2 : ENTITY work.mpg(Behavioral)
+        PORT MAP(
+            Clk    => clk,
+            Btn    => inc,
+            Enable => inc_debounced
+        );
+    mpg3 : ENTITY work.mpg(Behavioral)
+        PORT MAP(
+            Clk    => clk,
+            Btn    => dec,
+            Enable => dec_debounced
+        );
+
+    img_ctrl_process : PROCESS (clk, inc_debounced, dec_debounced) IS
+    BEGIN
+        IF RISING_EDGE(clk) THEN
+            IF (inc_debounced = '1' AND Img_Control < 4) THEN
+                Img_Control <= Img_Control + 1;
+            ELSIF (dec_debounced = '1' AND Img_Control > 0) THEN
+                Img_Control <= Img_Control - 1;
+            ELSE
+                Img_Control <= Img_Control;
+            END IF;
+        END IF;
+    END PROCESS;
+
     H_counter_addressable <= to_integer(unsigned(H_counter)) - H_MIN_ADDRESSABLE;
     V_counter_addressable <= to_integer(unsigned(V_counter)) - V_MIN_ADDRESSABLE;
     H_V_index             <= V_counter_addressable * WIDTH + H_counter_addressable;
@@ -146,10 +185,10 @@ BEGIN
         douta => Img_data
     );
 
-    color_mux : PROCESS (Display_Area, V_counter_addressable, H_counter_addressable, Img_Data, sw) IS
+    color_mux : PROCESS (Display_Area, V_counter_addressable, H_counter_addressable, Img_Data, Img_Control) IS
     BEGIN
         IF Display_Area = '1' AND (V_counter_addressable < HEIGHT) AND (H_counter_addressable < WIDTH) AND (V_counter_addressable >= 0) AND (H_counter_addressable >= 0) THEN
-            IF sw(0 DOWNTO 0) = "1" THEN
+            IF Img_Control = 0 THEN
                 IF Img_Data(0 DOWNTO 0) = "1" THEN
                     RED_temp   <= x"F";
                     GREEN_temp <= x"F";
@@ -159,7 +198,7 @@ BEGIN
                     GREEN_temp <= x"0";
                     BLUE_temp  <= x"0";
                 END IF;
-            ELSIF sw(1 DOWNTO 1) = "1" THEN
+            ELSIF Img_Control = 1 THEN
                 IF Img_Data(1 DOWNTO 1) = "1" THEN
                     RED_temp   <= x"F";
                     GREEN_temp <= x"F";
@@ -169,7 +208,7 @@ BEGIN
                     GREEN_temp <= x"0";
                     BLUE_temp  <= x"0";
                 END IF;
-            ELSIF sw(2 DOWNTO 2) = "1" THEN
+            ELSIF Img_Control = 2 THEN
                 IF Img_Data(2 DOWNTO 2) = "1" THEN
                     RED_temp   <= x"F";
                     GREEN_temp <= x"F";
@@ -179,7 +218,7 @@ BEGIN
                     GREEN_temp <= x"0";
                     BLUE_temp  <= x"0";
                 END IF;
-            ELSIF sw(3 DOWNTO 3) = "1" THEN
+            ELSIF Img_Control = 3 THEN
                 IF Img_Data(3 DOWNTO 3) = "1" THEN
                     RED_temp   <= x"F";
                     GREEN_temp <= x"F";

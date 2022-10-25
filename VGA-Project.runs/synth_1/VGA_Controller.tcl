@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 4
 set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
@@ -95,6 +96,7 @@ read_vhdl -library xil_defaultlib {
   C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/new/Comparators.vhd
   C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/new/Counters.vhd
   C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/new/Frequency_Divider.vhd
+  C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/new/mpg.vhd
   C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/new/VGA_Controller.vhd
 }
 read_ip -quiet C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/ip/BRAM_img1/BRAM_img1.xci

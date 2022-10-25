@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date         : Sat Oct 22 09:13:50 2022
+| Date         : Tue Oct 25 16:23:05 2022
 | Host         : DESKTOP-6LNBR6U running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file VGA_Controller_control_sets_placed.rpt
 | Design       : VGA_Controller
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |     5 |
-|    Minimum number of control sets                        |     5 |
+| Total control sets                                       |     7 |
+|    Minimum number of control sets                        |     7 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    27 |
+| Unused register locations in slices containing registers |    26 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,7 +39,7 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |     5 |
+| Total control sets |     7 |
 | >= 0 to < 4        |     2 |
 | >= 4 to < 6        |     0 |
 | >= 6 to < 8        |     0 |
@@ -47,7 +47,7 @@ Table of Contents
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     3 |
+| >= 16              |     5 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,11 +58,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              20 |           15 |
-| No           | No                    | Yes                    |              33 |           12 |
+| No           | No                    | No                     |              42 |           22 |
+| No           | No                    | Yes                    |              33 |           10 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |              32 |           13 |
+| Yes          | No                    | No                     |              35 |           11 |
+| Yes          | No                    | Yes                    |              32 |           15 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -74,10 +74,12 @@ Table of Contents
 |   Clock Signal  | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
 +-----------------+---------------+------------------+------------------+----------------+--------------+
 | ~freq_div/Q1    |               |                  |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG  |               |                  |                1 |              1 |         1.00 |
-|  clk_25Mhz_BUFG |               |                  |               13 |             18 |         1.38 |
-|  clk_25Mhz_BUFG | cnts/TC       | rst_IBUF         |               13 |             32 |         2.46 |
-|  clk_25Mhz_BUFG |               | rst_IBUF         |               12 |             33 |         2.75 |
+|  clk_IBUF_BUFG  | mpg1/eqOp     |                  |                3 |              3 |         1.00 |
+|  clk_25Mhz_BUFG |               |                  |               10 |             18 |         1.80 |
+|  clk_IBUF_BUFG  |               |                  |               11 |             23 |         2.09 |
+|  clk_25Mhz_BUFG | cnts/TC       | mpg1/AR[0]       |               15 |             32 |         2.13 |
+|  clk_IBUF_BUFG  | mpg3/Q3_reg_0 |                  |                8 |             32 |         4.00 |
+|  clk_25Mhz_BUFG |               | mpg1/AR[0]       |               10 |             33 |         3.30 |
 +-----------------+---------------+------------------+------------------+----------------+--------------+
 
 
