@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date         : Fri Oct 21 18:05:06 2022
+| Date         : Wed Oct 26 17:05:20 2022
 | Host         : DESKTOP-6LNBR6U running 64-bit major release  (build 9200)
 | Command      : report_utilization -file VGA_Controller_utilization_synth.rpt -pb VGA_Controller_utilization_synth.pb
 | Design       : VGA_Controller
@@ -31,11 +31,11 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |  138 |     0 |          0 |     20800 |  0.66 |
-|   LUT as Logic          |  138 |     0 |          0 |     20800 |  0.66 |
+| Slice LUTs*             |  122 |     0 |          0 |     20800 |  0.59 |
+|   LUT as Logic          |  122 |     0 |          0 |     20800 |  0.59 |
 |   LUT as Memory         |    0 |     0 |          0 |      9600 |  0.00 |
-| Slice Registers         |   67 |     0 |          0 |     41600 |  0.16 |
-|   Register as Flip Flop |   67 |     0 |          0 |     41600 |  0.16 |
+| Slice Registers         |   69 |     0 |          0 |     41600 |  0.17 |
+|   Register as Flip Flop |   69 |     0 |          0 |     41600 |  0.17 |
 |   Register as Latch     |    0 |     0 |          0 |     41600 |  0.00 |
 | F7 Muxes                |    0 |     0 |          0 |     16300 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |      8150 |  0.00 |
@@ -58,7 +58,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 65    |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 2     |          Yes |       Reset |            - |
+| 4     |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -151,17 +151,17 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT5     |   91 |                 LUT |
+| LUT5     |   77 |                 LUT |
 | FDCE     |   65 |        Flop & Latch |
-| LUT6     |   25 |                 LUT |
+| LUT2     |   32 |                 LUT |
 | CARRY4   |   16 |          CarryLogic |
 | OBUF     |   14 |                  IO |
 | LUT4     |   13 |                 LUT |
-| LUT2     |    5 |                 LUT |
-| LUT1     |    5 |                 LUT |
-| LUT3     |    4 |                 LUT |
+| LUT1     |    8 |                 LUT |
+| LUT6     |    7 |                 LUT |
+| FDRE     |    4 |        Flop & Latch |
+| LUT3     |    2 |                 LUT |
 | IBUF     |    2 |                  IO |
-| FDRE     |    2 |        Flop & Latch |
 | BUFG     |    2 |               Clock |
 | DSP48E1  |    1 |    Block Arithmetic |
 +----------+------+---------------------+

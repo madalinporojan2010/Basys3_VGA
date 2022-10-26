@@ -1,6 +1,6 @@
 from PIL import Image
 # from tkinter import Tk for Python 3.x
-from tkinter import Tk, dialog, messagebox
+from tkinter import Tk, messagebox
 from tkinter.filedialog import askopenfilename
 import sys
 
@@ -13,7 +13,7 @@ if len(img_PATH) > 0:
 
     im = Image.open(img_PATH)
 
-    im = im.resize((320, 240))
+    im = im.resize((320, 200))
     pixels = im.load()
 
     for x in range(im.size[0]):

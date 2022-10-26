@@ -37,25 +37,45 @@ ENTITY VGA_Controller IS
 END VGA_Controller;
 
 ARCHITECTURE Behavioral OF VGA_Controller IS
-    CONSTANT HORIZONTAL             : INTEGER                        := 800;
-    CONSTANT VERTICAL               : INTEGER                        := 525;
+    CONSTANT HORIZONTAL             : INTEGER                        := 480;
+    CONSTANT VERTICAL               : INTEGER                        := 215;
 
-    CONSTANT HEIGHT                 : INTEGER                        := 240;
+    CONSTANT HEIGHT                 : INTEGER                        := 200;
     CONSTANT WIDTH                  : INTEGER                        := 320;
 
-    CONSTANT H_MIN_ADDRESSABLE      : INTEGER                        := 144;
-    CONSTANT H_MAX_ADDRESSABLE      : INTEGER                        := 784;
+    CONSTANT H_MIN_ADDRESSABLE      : INTEGER                        := 112;
+    CONSTANT H_MAX_ADDRESSABLE      : INTEGER                        := 432;
 
-    CONSTANT V_MIN_ADDRESSABLE      : INTEGER                        := 35;
-    CONSTANT V_MAX_ADDRESSABLE      : INTEGER                        := 515;
+    CONSTANT V_MIN_ADDRESSABLE      : INTEGER                        := 12;
+    CONSTANT V_MAX_ADDRESSABLE      : INTEGER                        := 212;
 
     CONSTANT H_MIN_HS_VS_GENERATION : INTEGER                        := 0;
-    CONSTANT H_MAX_HS_VS_GENERATION : INTEGER                        := 96;
+    CONSTANT H_MAX_HS_VS_GENERATION : INTEGER                        := 32;
 
     CONSTANT V_MIN_HS_VS_GENERATION : INTEGER                        := 0;
-    CONSTANT V_MAX_HS_VS_GENERATION : INTEGER                        := 2;
+    CONSTANT V_MAX_HS_VS_GENERATION : INTEGER                        := 6;
+
+    -- 320x240
+    -- CONSTANT HORIZONTAL             : INTEGER                        := 400;
+    -- CONSTANT VERTICAL               : INTEGER                        := 255;
+
+    -- CONSTANT HEIGHT                 : INTEGER                        := 240;
+    -- CONSTANT WIDTH                  : INTEGER                        := 320;
+
+    -- CONSTANT H_MIN_ADDRESSABLE      : INTEGER                        := 40;
+    -- CONSTANT H_MAX_ADDRESSABLE      : INTEGER                        := 392;
+
+    -- CONSTANT V_MIN_ADDRESSABLE      : INTEGER                        := 14;
+    -- CONSTANT V_MAX_ADDRESSABLE      : INTEGER                        := 254;
+
+    -- CONSTANT H_MIN_HS_VS_GENERATION : INTEGER                        := 0;
+    -- CONSTANT H_MAX_HS_VS_GENERATION : INTEGER                        := 32;
+
+    -- CONSTANT V_MIN_HS_VS_GENERATION : INTEGER                        := 0;
+    -- CONSTANT V_MAX_HS_VS_GENERATION : INTEGER                        := 8;
 
     SIGNAL clk_25Mhz                : STD_LOGIC                      := '0';
+    SIGNAL clk_6Mhz                 : STD_LOGIC                      := '0';
     SIGNAL H_counter                : STD_LOGIC_VECTOR (9 DOWNTO 0)  := (OTHERS => '0');
     SIGNAL V_counter                : STD_LOGIC_VECTOR (9 DOWNTO 0)  := (OTHERS => '0');
     SIGNAL H_counter_addressable    : INTEGER                        := 0;
@@ -85,7 +105,8 @@ BEGIN
     freq_div : ENTITY work.Frequency_Divider(Behavioral)
         PORT MAP(
             clk       => clk,
-            clk_25Mhz => clk_25Mhz
+            clk_25Mhz => clk_25Mhz,
+            clk_6Mhz  => clk_6Mhz
         );
 
     cnts : ENTITY work.Counters(Behavioral)
@@ -94,7 +115,7 @@ BEGIN
             VERTICAL   => VERTICAL
         )
         PORT MAP(
-            clk       => clk_25Mhz,
+            clk       => clk_6Mhz, -- clk_25Mhz
             rst       => rst,
             H_counter => H_counter,
             V_counter => V_counter
@@ -128,7 +149,7 @@ BEGIN
                "11111111111111111";
     img_mem : BRAM_img1
     PORT MAP(
-        clka  => clk_25Mhz,
+        clka  => clk_6Mhz,
         wea   => "0",
         addra => memAddr,
         dina  => x"000",

@@ -70,6 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 4
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -87,7 +89,7 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 add_files C:/Users/Madalin/OneDrive/SSC/img_src/converted/img1.coe
-add_files c:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/ip/img2.coe
+add_files C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/ip/img2.coe
 read_mem C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/new/image1.mem
 read_vhdl -library xil_defaultlib {
   C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/new/Comparators.vhd
