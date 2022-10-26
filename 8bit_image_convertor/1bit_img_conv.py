@@ -1,7 +1,6 @@
-from operator import index, indexOf, le
 from PIL import Image
 # from tkinter import Tk for Python 3.x
-from tkinter import Tk, dialog, messagebox
+from tkinter import Tk, messagebox
 from tkinter.filedialog import askopenfilenames
 import sys
 
