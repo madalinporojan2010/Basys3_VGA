@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date         : Tue Oct 25 16:23:24 2022
+| Date         : Sun Oct 30 19:37:46 2022
 | Host         : DESKTOP-6LNBR6U running 64-bit major release  (build 9200)
 | Command      : report_methodology -file VGA_Controller_methodology_drc_routed.rpt -pb VGA_Controller_methodology_drc_routed.pb -rpx VGA_Controller_methodology_drc_routed.rpx
 | Design       : VGA_Controller
@@ -23,14 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 153
+             Violations found: 151
 +-----------+------------------+-------------------------------+------------+
 | Rule      | Severity         | Description                   | Violations |
 +-----------+------------------+-------------------------------+------------+
 | TIMING-17 | Critical Warning | Non-clocked sequential cell   | 133        |
 | DPIR-1    | Warning          | Asynchronous driver check     | 4          |
-| LUTAR-1   | Warning          | LUT drives async reset alert  | 1          |
-| TIMING-18 | Warning          | Missing input or output delay | 15         |
+| TIMING-18 | Warning          | Missing input or output delay | 14         |
 +-----------+------------------+-------------------------------+------------+
 
 2. REPORT DETAILS
@@ -720,18 +719,6 @@ Asynchronous driver check
 DSP H_V_index input pin H_V_index/C[3] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
 Related violations: <none>
 
-LUTAR-1#1 Warning
-LUT drives async reset alert  
-LUT cell mpg1/Q1_value[31]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) cnts/Q2_value_reg[26]/CLR, cnts/Q2_value_reg[27]/CLR,
-cnts/Q2_value_reg[28]/CLR, cnts/Q2_value_reg[29]/CLR,
-cnts/Q2_value_reg[2]/CLR, cnts/Q2_value_reg[30]/CLR,
-cnts/Q2_value_reg[31]/CLR, cnts/Q2_value_reg[3]/CLR,
-cnts/Q2_value_reg[4]/CLR, cnts/Q2_value_reg[5]/CLR,
-cnts/Q2_value_reg[6]/CLR, cnts/Q2_value_reg[7]/CLR,
-cnts/Q2_value_reg[8]/CLR, cnts/Q2_value_reg[9]/CLR, cnts/TC_reg/CLR
- (the first 15 of 65 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
-Related violations: <none>
-
 TIMING-18#1 Warning
 Missing input or output delay  
 An input delay is missing on dec relative to clock(s) sys_clk_pin
@@ -744,65 +731,60 @@ Related violations: <none>
 
 TIMING-18#3 Warning
 Missing input or output delay  
-An input delay is missing on rst relative to clock(s) sys_clk_pin
+An output delay is missing on BLUE[0] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#4 Warning
 Missing input or output delay  
-An output delay is missing on BLUE[0] relative to clock(s) sys_clk_pin
+An output delay is missing on BLUE[1] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#5 Warning
 Missing input or output delay  
-An output delay is missing on BLUE[1] relative to clock(s) sys_clk_pin
+An output delay is missing on BLUE[2] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#6 Warning
 Missing input or output delay  
-An output delay is missing on BLUE[2] relative to clock(s) sys_clk_pin
+An output delay is missing on BLUE[3] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#7 Warning
 Missing input or output delay  
-An output delay is missing on BLUE[3] relative to clock(s) sys_clk_pin
+An output delay is missing on GREEN[0] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#8 Warning
 Missing input or output delay  
-An output delay is missing on GREEN[0] relative to clock(s) sys_clk_pin
+An output delay is missing on GREEN[1] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#9 Warning
 Missing input or output delay  
-An output delay is missing on GREEN[1] relative to clock(s) sys_clk_pin
+An output delay is missing on GREEN[2] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#10 Warning
 Missing input or output delay  
-An output delay is missing on GREEN[2] relative to clock(s) sys_clk_pin
+An output delay is missing on GREEN[3] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#11 Warning
 Missing input or output delay  
-An output delay is missing on GREEN[3] relative to clock(s) sys_clk_pin
+An output delay is missing on RED[0] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#12 Warning
 Missing input or output delay  
-An output delay is missing on RED[0] relative to clock(s) sys_clk_pin
+An output delay is missing on RED[1] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#13 Warning
 Missing input or output delay  
-An output delay is missing on RED[1] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#14 Warning
-Missing input or output delay  
 An output delay is missing on RED[2] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
-TIMING-18#15 Warning
+TIMING-18#14 Warning
 Missing input or output delay  
 An output delay is missing on RED[3] relative to clock(s) sys_clk_pin
 Related violations: <none>

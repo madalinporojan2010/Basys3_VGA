@@ -67,7 +67,6 @@ ARCHITECTURE Behavioral OF VGA_Controller IS
     CONSTANT V_MIN_HS_VS_GENERATION : INTEGER                        := 0;
     CONSTANT V_MAX_HS_VS_GENERATION : INTEGER                        := 2;
 
-    SIGNAL rst_debounced            : STD_LOGIC                      := '0';
     SIGNAL inc_debounced            : STD_LOGIC                      := '0';
     SIGNAL dec_debounced            : STD_LOGIC                      := '0';
 
@@ -113,7 +112,7 @@ BEGIN
         )
         PORT MAP(
             clk       => clk_25Mhz,
-            rst       => rst_debounced,
+            rst       => rst,
             H_counter => H_counter,
             V_counter => V_counter
         );
@@ -140,16 +139,10 @@ BEGIN
     mpg1 : ENTITY work.mpg(Behavioral)
         PORT MAP(
             Clk    => clk,
-            Btn    => rst,
-            Enable => rst_debounced
-        );
-    mpg2 : ENTITY work.mpg(Behavioral)
-        PORT MAP(
-            Clk    => clk,
             Btn    => inc,
             Enable => inc_debounced
         );
-    mpg3 : ENTITY work.mpg(Behavioral)
+    mpg2 : ENTITY work.mpg(Behavioral)
         PORT MAP(
             Clk    => clk,
             Btn    => dec,

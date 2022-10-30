@@ -2,8 +2,11 @@
 2020.2
 Apr 18 2022
 16:05:34
-C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.srcs/sources_1/new/Comparators.vhd,1665773407,vhdl,C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.srcs/sources_1/new/VGA_Controller.vhd,,,comparators,,,,,,,,
-C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.srcs/sources_1/new/Counters.vhd,1665773872,vhdl,C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.srcs/sources_1/new/VGA_Controller.vhd,,,counters,,,,,,,,
-C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.srcs/sources_1/new/Frequency_Divider.vhd,1665773826,vhdl,C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.srcs/sources_1/new/VGA_Controller.vhd,,,frequency_divider,,,,,,,,
-C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.srcs/sources_1/new/Img_Memory.vhd,1665832752,vhdl,C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.srcs/sources_1/new/VGA_Controller.vhd,,,img_memory,,,,,,,,
-C:/Users/Madalin/OneDrive/SSC/VGA-Project/VGA-Project.srcs/sources_1/new/VGA_Controller.vhd,1665830834,vhdl,,,,vga_controller,,,,,,,,
+C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.gen/sources_1/ip/BRAM_img1/sim/BRAM_img1.v,1667147381,verilog,,,,BRAM_img1,,,,,,,,
+C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.sim/sim_1/behav/xsim/glbl.v,1649976174,verilog,,,,glbl,,,,,,,,
+C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sim_1/new/VGA_controller_sim.vhd,1667151231,vhdl,,,,vga_controller_sim,,,,,,,,
+C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/new/Comparators.vhd,1666387525,vhdl,C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/new/VGA_Controller.vhd,,,comparators,,,,,,,,
+C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/new/Counters.vhd,1666387525,vhdl,C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/new/VGA_Controller.vhd,,,counters,,,,,,,,
+C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/new/Frequency_Divider.vhd,1666794618,vhdl,C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/new/VGA_Controller.vhd,,,frequency_divider,,,,,,,,
+C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/new/VGA_Controller.vhd,1667151291,vhdl,,,,vga_controller,,,,,,,,
+C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/new/mpg.vhd,1666794618,vhdl,C:/Users/Madalin/Documents/GitHub/Basys3_VGA/VGA-Project.srcs/sources_1/new/VGA_Controller.vhd,,,mpg,,,,,,,,
